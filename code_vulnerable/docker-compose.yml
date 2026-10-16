@@ -1,0 +1,41 @@
+services:
+  message_vault:
+    build:
+      context: ./src/message_vault
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    networks:
+      - app-net
+
+  processing_worker:
+    build:
+      context: .
+      dockerfile: src/processing_worker/Dockerfile
+    environment:
+      - MESSAGE_VAULT_URL=http://message_vault:8001
+    ports:
+      - "8002:8002"
+    networks:
+      - app-net
+    depends_on:
+      - message_vault
+
+  app_api:
+    build:
+      context: ./src/app_api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - MESSAGE_VAULT_URL=http://message_vault:8001
+      - PROCESSING_WORKER_URL=http://processing_worker:8002
+    networks:
+      - app-net
+    depends_on:
+      - message_vault
+      - processing_worker
+
+networks:
+  app-net:
+    driver: bridge

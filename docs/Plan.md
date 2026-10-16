@@ -1,6 +1,3 @@
-# Project Overview
-The project is a Secure Messaging Application built in Python, designed to demonstrate secure software composition and authorization enforcement. The system allows orinary users to securely send, read and export private messages, while granting administrators system auditing and message deletion capabilities. To protect user data and apply security principles like Least Privileges, Defense in Depth and Fail-Safe Defaults, the architecture is distributed across three isolated components: an Application API gateway, a secure Message Vault (Resource Service) and a background Processing Worker.
-
 # Phase 1: Requirements
 
 ## Scope and Operation List
@@ -42,3 +39,5 @@ The project is a Secure Messaging Application built in Python, designed to demon
 | **Information Disclosure** | Private Messages | A user attempts to read another user's inbox. | Confidentiality, Privacy | **Fail-safe defaults:** Vault denies read access unless `user_id` matches the message owner. |
 | **Denial of Service** | Application API | Attacker spams the export function to crash the app. | Availability | Rate limiting at the API layer. |
 | **Elevation of Privilege** | User Identities | An ordinary user attempts to call the delete endpoint. | Authentication, Confidentiality | **Defense in Depth:** Both API and Vault verify the "Admin" role before deletion. |
+
+# Phase 2: Implementation and Build
