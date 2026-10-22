@@ -141,14 +141,19 @@ pipeline {
                 // run the tests, then stop the services
                 sh '''
                     . ${VENV}/bin/activate
-                    mkdir -p ${REPORTS}/svc-logs
+                    WS="$PWD"
+                    mkdir -p "$WS/${REPORTS}/svc-logs"
+
+                    # Each service runs with its own directory as CWD (mirroring the
+                    # Docker WORKDIR), so relative paths like ./documents and the
+                    # sqlite files resolve exactly as they do in production.
                     rm -f ${TARGET}/src/app_api/auth.db ${TARGET}/src/message_vault/vault.db || true
 
-                    uvicorn main:app --app-dir ${TARGET}/src/message_vault    --host 127.0.0.1 --port 8001 > ${REPORTS}/svc-logs/message_vault.log 2>&1 &
+                    ( cd ${TARGET}/src/message_vault    && exec uvicorn main:app --host 127.0.0.1 --port 8001 ) > "$WS/${REPORTS}/svc-logs/message_vault.log" 2>&1 &
                     VAULT_PID=$!
-                    uvicorn main:app --app-dir ${TARGET}/src/processing_worker --host 127.0.0.1 --port 8002 > ${REPORTS}/svc-logs/processing_worker.log 2>&1 &
+                    ( cd ${TARGET}/src/processing_worker && exec uvicorn main:app --host 127.0.0.1 --port 8002 ) > "$WS/${REPORTS}/svc-logs/processing_worker.log" 2>&1 &
                     WORKER_PID=$!
-                    uvicorn main:app --app-dir ${TARGET}/src/app_api           --host 127.0.0.1 --port 8000 > ${REPORTS}/svc-logs/app_api.log 2>&1 &
+                    ( cd ${TARGET}/src/app_api           && exec uvicorn main:app --host 127.0.0.1 --port 8000 ) > "$WS/${REPORTS}/svc-logs/app_api.log" 2>&1 &
                     API_PID=$!
 
                     stop_services() { kill $API_PID $WORKER_PID $VAULT_PID 2>/dev/null || true; }
@@ -162,7 +167,7 @@ pipeline {
                         fi
                         echo "waiting for API... ($i)"; sleep 1
                     done
-                    if [ "$up" != "1" ]; then echo "API did not come up"; exit 1; fi
+                    if [ "$up" != "1" ]; then echo "API did not come up"; cat "$WS/${REPORTS}/svc-logs/"*.log; exit 1; fi
 
                     # Backup wire format the Import feature expects differs by build:
                     # pickle for the vulnerable build, json for the fixed one.
@@ -173,7 +178,7 @@ pipeline {
                     echo "Using BACKUP_FORMAT=${BACKUP_FORMAT}"
 
                     set +e
-                    pytest tests/ -v --junitxml=${REPORTS}/pytest-junit.xml
+                    pytest tests/ -v --junitxml="$WS/${REPORTS}/pytest-junit.xml"
                     rc=$?
                     set -e
                     stop_services
