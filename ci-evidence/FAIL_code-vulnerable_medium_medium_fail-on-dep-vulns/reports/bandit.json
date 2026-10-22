@@ -1,0 +1,262 @@
+{
+  "errors": [],
+  "generated_at": "2026-10-22T21:02:36Z",
+  "metrics": {
+    "_totals": {
+      "CONFIDENCE.HIGH": 2,
+      "CONFIDENCE.LOW": 6,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 1,
+      "SEVERITY.MEDIUM": 7,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 266,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_vulnerable/external_packages/chat_formatter/build/lib/chat_formatter/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 9,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_vulnerable/external_packages/chat_formatter/chat_formatter/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 9,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_vulnerable/external_packages/chat_formatter/setup.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 7,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_vulnerable/src/app_api/main.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 3,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 3,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 124,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_vulnerable/src/message_vault/main.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 1,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 58,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_vulnerable/src/processing_worker/main.py": {
+      "CONFIDENCE.HIGH": 2,
+      "CONFIDENCE.LOW": 2,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 1,
+      "SEVERITY.MEDIUM": 3,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 59,
+      "nosec": 0,
+      "skipped_tests": 0
+    }
+  },
+  "results": [
+    {
+      "code": "122     }\n123     response = requests.post(f\"{MESSAGE_VAULT_URL}/messages\", json=payload)\n124     return response.json()\n",
+      "col_offset": 15,
+      "end_col_offset": 75,
+      "filename": "code_vulnerable/src/app_api/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 123,
+      "line_range": [
+        123
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "132     # Trigger the processing worker service for the caller's own messages\n133     response = requests.post(f\"{PROCESSING_WORKER_URL}/run-export\", json={\"username\": user_info[\"username\"]})\n134     return response.json()\n",
+      "col_offset": 15,
+      "end_col_offset": 109,
+      "filename": "code_vulnerable/src/app_api/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 133,
+      "line_range": [
+        133
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "146     # Hand the backup blob to the processing worker service\n147     response = requests.post(\n148         f\"{PROCESSING_WORKER_URL}/import-backup\",\n149         json={\"username\": user_info[\"username\"], \"backup\": body.backup}\n150     )\n151     return response.json()\n",
+      "col_offset": 15,
+      "end_col_offset": 5,
+      "filename": "code_vulnerable/src/app_api/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 147,
+      "line_range": [
+        147,
+        148,
+        149,
+        150
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "62     # Using direct string formatting instead of parameterized queries \n63     query = f\"SELECT id, sender, recipient, content FROM messages WHERE recipient = '{recipient}'\"\n64     \n",
+      "col_offset": 14,
+      "end_col_offset": 85,
+      "filename": "code_vulnerable/src/message_vault/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 89,
+        "link": "https://cwe.mitre.org/data/definitions/89.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible SQL injection vector through string-based query construction.",
+      "line_number": 63,
+      "line_range": [
+        63
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html",
+      "test_id": "B608",
+      "test_name": "hardcoded_sql_expressions"
+    },
+    {
+      "code": "6 import base64\n7 import pickle\n8 from chat_formatter import format_chat_to_markdown\n",
+      "col_offset": 0,
+      "end_col_offset": 13,
+      "filename": "code_vulnerable/src/processing_worker/main.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 502,
+        "link": "https://cwe.mitre.org/data/definitions/502.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Consider possible security implications associated with pickle module.",
+      "line_number": 7,
+      "line_range": [
+        7
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle",
+      "test_id": "B403",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "35         # Worker requests allowed records from Vault\n36         vault_response = requests.get(f\"{MESSAGE_VAULT_URL}/messages/{req.username}\")\n37         \n",
+      "col_offset": 25,
+      "end_col_offset": 85,
+      "filename": "code_vulnerable/src/processing_worker/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 36,
+      "line_range": [
+        36
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "74         # inside the worker during unpickling (via __reduce__).\n75         messages = pickle.loads(raw)\n76 \n",
+      "col_offset": 19,
+      "end_col_offset": 36,
+      "filename": "code_vulnerable/src/processing_worker/main.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 502,
+        "link": "https://cwe.mitre.org/data/definitions/502.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.",
+      "line_number": 75,
+      "line_range": [
+        75
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle",
+      "test_id": "B301",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "83             }\n84             vault_response = requests.post(f\"{MESSAGE_VAULT_URL}/messages\", json=payload)\n85             if vault_response.status_code == 200:\n",
+      "col_offset": 29,
+      "end_col_offset": 89,
+      "filename": "code_vulnerable/src/processing_worker/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 84,
+      "line_range": [
+        84
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    }
+  ]
+}

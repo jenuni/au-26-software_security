@@ -1,0 +1,104 @@
+Run started:2026-10-22 21:02:36.243878+00:00
+
+Test results:
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html
+   Location: code_vulnerable/src/app_api/main.py:123:15
+122	    }
+123	    response = requests.post(f"{MESSAGE_VAULT_URL}/messages", json=payload)
+124	    return response.json()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html
+   Location: code_vulnerable/src/app_api/main.py:133:15
+132	    # Trigger the processing worker service for the caller's own messages
+133	    response = requests.post(f"{PROCESSING_WORKER_URL}/run-export", json={"username": user_info["username"]})
+134	    return response.json()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html
+   Location: code_vulnerable/src/app_api/main.py:147:15
+146	    # Hand the backup blob to the processing worker service
+147	    response = requests.post(
+148	        f"{PROCESSING_WORKER_URL}/import-backup",
+149	        json={"username": user_info["username"], "backup": body.backup}
+150	    )
+151	    return response.json()
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html
+   Location: code_vulnerable/src/message_vault/main.py:63:14
+62	    # Using direct string formatting instead of parameterized queries 
+63	    query = f"SELECT id, sender, recipient, content FROM messages WHERE recipient = '{recipient}'"
+64	    
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle
+   Location: code_vulnerable/src/processing_worker/main.py:7:0
+6	import base64
+7	import pickle
+8	from chat_formatter import format_chat_to_markdown
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html
+   Location: code_vulnerable/src/processing_worker/main.py:36:25
+35	        # Worker requests allowed records from Vault
+36	        vault_response = requests.get(f"{MESSAGE_VAULT_URL}/messages/{req.username}")
+37	        
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle
+   Location: code_vulnerable/src/processing_worker/main.py:75:19
+74	        # inside the worker during unpickling (via __reduce__).
+75	        messages = pickle.loads(raw)
+76	
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html
+   Location: code_vulnerable/src/processing_worker/main.py:84:29
+83	            }
+84	            vault_response = requests.post(f"{MESSAGE_VAULT_URL}/messages", json=payload)
+85	            if vault_response.status_code == 200:
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 266
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 1
+		Medium: 7
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 6
+		Medium: 0
+		High: 2
+Files skipped (0):

@@ -1,0 +1,214 @@
+{
+  "errors": [],
+  "generated_at": "2026-10-22T20:53:00Z",
+  "metrics": {
+    "_totals": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 5,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 5,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 310,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_fixed/external_packages/chat_formatter/build/lib/chat_formatter/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 9,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_fixed/external_packages/chat_formatter/chat_formatter/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 9,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_fixed/external_packages/chat_formatter/setup.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 7,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_fixed/src/app_api/main.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 3,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 3,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 133,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_fixed/src/message_vault/main.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 67,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "code_fixed/src/processing_worker/main.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 2,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 2,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 85,
+      "nosec": 0,
+      "skipped_tests": 0
+    }
+  },
+  "results": [
+    {
+      "code": "124     }\n125     response = requests.post(f\"{MESSAGE_VAULT_URL}/messages\", json=payload, headers=INTERNAL_HEADERS)\n126     return response.json()\n",
+      "col_offset": 15,
+      "end_col_offset": 101,
+      "filename": "code_fixed/src/app_api/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 125,
+      "line_range": [
+        125
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "133 \n134     response = requests.post(\n135         f\"{PROCESSING_WORKER_URL}/run-export\",\n136         json={\"username\": user_info[\"username\"]},\n137         headers=INTERNAL_HEADERS,\n138     )\n139     return response.json()\n",
+      "col_offset": 15,
+      "end_col_offset": 5,
+      "filename": "code_fixed/src/app_api/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 134,
+      "line_range": [
+        134,
+        135,
+        136,
+        137,
+        138
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "149 \n150     response = requests.post(\n151         f\"{PROCESSING_WORKER_URL}/import-backup\",\n152         json={\"username\": user_info[\"username\"], \"backup\": body.backup},\n153         headers=INTERNAL_HEADERS,\n154     )\n155     return response.json()\n",
+      "col_offset": 15,
+      "end_col_offset": 5,
+      "filename": "code_fixed/src/app_api/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 150,
+      "line_range": [
+        150,
+        151,
+        152,
+        153,
+        154
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "48     try:\n49         vault_response = requests.get(\n50             f\"{MESSAGE_VAULT_URL}/messages/{req.username}\",\n51             headers=INTERNAL_HEADERS,\n52         )\n53         if vault_response.status_code != 200:\n",
+      "col_offset": 25,
+      "end_col_offset": 9,
+      "filename": "code_fixed/src/processing_worker/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 49,
+      "line_range": [
+        49,
+        50,
+        51,
+        52
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "100             }\n101             vault_response = requests.post(\n102                 f\"{MESSAGE_VAULT_URL}/messages\",\n103                 json=payload,\n104                 headers=INTERNAL_HEADERS,\n105             )\n106             if vault_response.status_code == 200:\n",
+      "col_offset": 29,
+      "end_col_offset": 13,
+      "filename": "code_fixed/src/processing_worker/main.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 101,
+      "line_range": [
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    }
+  ]
+}

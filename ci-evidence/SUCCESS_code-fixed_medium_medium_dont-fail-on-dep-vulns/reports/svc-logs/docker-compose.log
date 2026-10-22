@@ -1,0 +1,62 @@
+message_vault-1  | INFO:     Started server process [1]
+message_vault-1      | INFO:     Waiting for application startup.
+message_vault-1      | INFO:     Application startup complete.
+message_vault-1      | INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+message_vault-1      | INFO:     172.18.0.3:56408 - "POST /messages HTTP/1.1" 200 OK
+processing_worker-1  | INFO:     Started server process [1]
+processing_worker-1  | INFO:     Waiting for application startup.
+processing_worker-1  | INFO:     Application startup complete.
+message_vault-1      | INFO:     172.18.0.4:50294 - "POST /messages HTTP/1.1" 200 OK
+message_vault-1      | INFO:     172.18.0.3:56420 - "GET /messages/pilot1 HTTP/1.1" 200 OK
+message_vault-1      | INFO:     172.18.0.4:50302 - "POST /messages HTTP/1.1" 200 OK
+message_vault-1      | INFO:     172.18.0.4:55954 - "POST /messages HTTP/1.1" 200 OK
+message_vault-1      | INFO:     172.18.0.3:49832 - "GET /messages/pilot2 HTTP/1.1" 200 OK
+message_vault-1      | INFO:     172.18.0.3:49840 - "POST /messages HTTP/1.1" 200 OK
+message_vault-1      | INFO:     172.18.0.3:49842 - "GET /messages/pilot1 HTTP/1.1" 200 OK
+message_vault-1      | INFO:     172.18.0.4:55956 - "POST /messages HTTP/1.1" 200 OK
+message_vault-1      | INFO:     172.18.0.1:57348 - "GET /messages/no_such_recipient%27%20OR%20%271%27%3D%271 HTTP/1.1" 401 Unauthorized
+message_vault-1      | INFO:     172.18.0.1:57362 - "GET /messages/pilot2 HTTP/1.1" 401 Unauthorized
+app_api-1            | INFO:     Started server process [1]
+app_api-1            | INFO:     Waiting for application startup.
+app_api-1            | INFO:     Application startup complete.
+app_api-1            | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+app_api-1            | INFO:     172.18.0.1:49466 - "GET /openapi.json HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49470 - "GET /openapi.json HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49486 - "POST /export HTTP/1.1" 403 Forbidden
+app_api-1            | INFO:     172.18.0.1:49494 - "POST /export HTTP/1.1" 403 Forbidden
+app_api-1            | INFO:     172.18.0.1:49496 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49510 - "POST /import HTTP/1.1" 403 Forbidden
+app_api-1            | INFO:     172.18.0.1:49526 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49528 - "POST /import HTTP/1.1" 200 OK
+processing_worker-1  | INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
+processing_worker-1  | INFO:     172.18.0.4:45716 - "POST /import-backup HTTP/1.1" 200 OK
+processing_worker-1  | INFO:     172.18.0.4:45722 - "POST /run-export HTTP/1.1" 200 OK
+processing_worker-1  | INFO:     172.18.0.4:49294 - "POST /run-export HTTP/1.1" 200 OK
+processing_worker-1  | INFO:     172.18.0.4:49298 - "POST /import-backup HTTP/1.1" 200 OK
+processing_worker-1  | INFO:     172.18.0.4:49314 - "POST /run-export HTTP/1.1" 200 OK
+processing_worker-1  | INFO:     172.18.0.1:43464 - "POST /run-export HTTP/1.1" 401 Unauthorized
+processing_worker-1  | INFO:     172.18.0.4:49322 - "POST /import-backup HTTP/1.1" 400 Bad Request
+app_api-1            | INFO:     172.18.0.1:49544 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49560 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49562 - "POST /messages HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49570 - "POST /export HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49572 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49586 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49602 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49610 - "POST /login HTTP/1.1" 401 Unauthorized
+app_api-1            | INFO:     172.18.0.1:49624 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49634 - "POST /messages HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:49638 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35898 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35906 - "POST /messages HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35908 - "POST /export HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35910 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35912 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35928 - "POST /import HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35940 - "POST /export HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35950 - "GET /download?filename=privacy.txt HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35956 - "GET /download?filename=..%2Fmain.py HTTP/1.1" 403 Forbidden
+app_api-1            | INFO:     172.18.0.1:35970 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35982 - "POST /messages HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35990 - "POST /login HTTP/1.1" 200 OK
+app_api-1            | INFO:     172.18.0.1:35996 - "POST /import HTTP/1.1" 200 OK

@@ -1,0 +1,86 @@
+Run started:2026-10-22 21:00:40.549576+00:00
+
+Test results:
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html
+   Location: code_fixed/src/app_api/main.py:125:15
+124	    }
+125	    response = requests.post(f"{MESSAGE_VAULT_URL}/messages", json=payload, headers=INTERNAL_HEADERS)
+126	    return response.json()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html
+   Location: code_fixed/src/app_api/main.py:134:15
+133	
+134	    response = requests.post(
+135	        f"{PROCESSING_WORKER_URL}/run-export",
+136	        json={"username": user_info["username"]},
+137	        headers=INTERNAL_HEADERS,
+138	    )
+139	    return response.json()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html
+   Location: code_fixed/src/app_api/main.py:150:15
+149	
+150	    response = requests.post(
+151	        f"{PROCESSING_WORKER_URL}/import-backup",
+152	        json={"username": user_info["username"], "backup": body.backup},
+153	        headers=INTERNAL_HEADERS,
+154	    )
+155	    return response.json()
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html
+   Location: code_fixed/src/processing_worker/main.py:49:25
+48	    try:
+49	        vault_response = requests.get(
+50	            f"{MESSAGE_VAULT_URL}/messages/{req.username}",
+51	            headers=INTERNAL_HEADERS,
+52	        )
+53	        if vault_response.status_code != 200:
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html
+   Location: code_fixed/src/processing_worker/main.py:101:29
+100	            }
+101	            vault_response = requests.post(
+102	                f"{MESSAGE_VAULT_URL}/messages",
+103	                json=payload,
+104	                headers=INTERNAL_HEADERS,
+105	            )
+106	            if vault_response.status_code == 200:
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 310
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 0
+		Medium: 5
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 5
+		Medium: 0
+		High: 0
+Files skipped (0):

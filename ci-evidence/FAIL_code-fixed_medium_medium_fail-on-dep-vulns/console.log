@@ -1,0 +1,386 @@
+Started by user [8mha:////4AQRqUpCOVciEHkG5ikX/CVoYxqB5WdOol6peln4HfmOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Obtained Jenkinsfile from git https://github.com/jenuni/au-26-software_security
+[8mha:////4DHksYNrSiyZdbEyGKjNd31jqL/D68MJRtaRaz9i4AekAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4DEB7C1HG7eyLvfSjvI25HoWXUxthojSatqbZ6TBmbDmAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4FmpfzyI91hg+/QAk96zzvih0Gbl4sa5NEWXJ5aTu1C2AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZR/eT83ILSktQifY2k0sycEt3MPE19AHHxbH3KAAAA[0mJenkins in /home/onlin/.jenkins/workspace/software_security
+[8mha:////4MYTpTCVKrptPeq6zVm4ORLLOcyx7cAmRYXTau/7qOgBAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4KA+8V37EkWPwhmSNV6gLeB6cLQljxY/uvJzCb7J8xTDAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] stage
+[8mha:////4LGnS4Pi2M1ENf9bQ10BvjV0ZJHK5TmQEAGff+nNyw79AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] { (Declarative: Checkout SCM)
+[8mha:////4IZw+5HCLx1tnBA1Z8KLoW9yaOI38Ft/7sBy7thj6st3AAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaWGsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gfg7KmOvAAAAA==[0m[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /home/onlin/.jenkins/workspace/software_security/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/jenuni/au-26-software_security # timeout=10
+Fetching upstream changes from https://github.com/jenuni/au-26-software_security
+ > git --version # timeout=10
+ > git --version # 'git version 2.53.0'
+ > git fetch --tags --force --progress -- https://github.com/jenuni/au-26-software_security +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 956f35e6884fcefde06a4a7ebb283916e76934ff (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 956f35e6884fcefde06a4a7ebb283916e76934ff # timeout=10
+Commit message: "use docker for the builds"
+ > git rev-list --no-walk 956f35e6884fcefde06a4a7ebb283916e76934ff # timeout=10
+[8mha:////4PSRGNfIQU3xPcLvknXLI0W3dPiI8QcEvY+C2MX/hhdJAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbGRNjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9Dg2gqvAAAAA==[0m[Pipeline] }
+[8mha:////4FHuQPNi0KFcSBAvHtZ8FusvWnNRqbZSsbJMRlXSrTtXAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRbWRhjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9J+wGOvAAAAA==[0m[Pipeline] // stage
+[8mha:////4HmkS0lZLvAEObRMjgTArVLy9u6txA68TcxmvnNrfKA3AAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDEh2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxI6h2G4+x/INtuQqUcEAAAA=[0m[Pipeline] withEnv
+[8mha:////4CIkfcvq49D4O/bVrAzIBFu9ox6wHNFDurus3/gh//tWAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoiUzoiJNerCCUITQtLo/zZJSSdOxNW4Ay2VmPBg2Zas93pDGQOcKBjuNHYWY2t570czJ54pdDdPmTu68pYwkte80bkhpc9rbShpWFUw2AjYamw9RYsmwU44+ZCVl2iqSwrzdhTArBrgCYWYyUmG9C1TgP19VJHwx/kLgKlPwOrDYvXyLD8BobDcwgAAAA==[0m[Pipeline] {
+[8mha:////4J/3RoSlzC8cwvmOyYrO8lV/ihzslMpoomWUBRz1mmuFAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUZUVMrFEWThCaEJJG/7dJSjpxIq7GHWipxIQHy7ZkvdcbqhjgRMEwp7GzGFvLej+aObFMobt5yszRlbWEkbxmQmdBSp/XKihpWFWUsOGw1dh6ihZNgh138iFrL9HUlxTm7cihtGqAJxR8JicZ0rdMAfb3UUXCH+cvAKY+Qdk0ix2WZ/UBbwyqm8IAAAA=[0m[Pipeline] withEnv
+[8mha:////4HzsUlU7qV2Rfq78vVxz/PFuhLvFllpuvxRpYwEOb4ZxAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUwIiYukZZOEFoQkgb/V9+UtqJE3E17kBLJSY8WLYl673eUESGE7ETjcXWY6y96ELvpiQG4vYaaBANXURNGClYoeygyNhqqYqShUVZDisJa4t1oOjRJdjIRj90GTS68px42o4Scm/u8IRMTuSkOX3LyLC99SYS/jh/ATB2CfLdfrbD/Cw+y7kUycIAAAA=[0m[Pipeline] {
+[8mha:////4JebhEb2OPD67aVwt6BK+HWohmhSoy7AvMtYIJagytP/AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUCDbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxAbNWnxXCAAAA[0m[Pipeline] timestamps
+[8mha:////4LN2EuBtlmGnUJMp+Jl5lxXG0ccRklZ24E6eMG3bbNpHAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUSDAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD5WQ+PfCAAAA[0m[Pipeline] {
+[8mha:////4C+z8mxhgsowHs66mkQ48yt3QVd5AgbNwkJ5V4Q3ijCfAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUDLAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD/s94rDCAAAA[0m[Pipeline] timeout
+[2026-10-22T21:00:30.641Z] Timeout set to expire in 30 min
+[8mha:////4P/050bb0ML0umdzMhyPugeT4a763MG0gsBnh744aRcHAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohULDAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD1+IXOLCAAAA[0m[Pipeline] {
+[8mha:////4AQCtegEoNkkse40wLIhjjKZ88bxXnlm+qUgF5VcYfFPAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUTCAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD0rlhNLCAAAA[0m[Pipeline] stage
+[8mha:////4K57fiBmy4cT42Hy52hpNeDpfR6rJEnTaf5+OqMdoQMsAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUbCDE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxASnCIIrCAAAA[0m[Pipeline] { (Checkout)
+[8mha:////4HDCHVzstBq0GAwMtbIOHwgTyntZKyiIqEi+watoKnyzAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICdAilorXc8AKTGOPEugu2g1PxIr7GH7CIRMUWq51t5vWGZfBQszfYaeothcbi4EaTFyb2/dVxwo4v2DAFdhqlTpJbfZpRctQwpyhhIWClqXEcLJkIa9Gph6qcIlOdo8/fUUBp2zs8oRDZHJWPX5g8bG5jG5h+nr8CmIYI5e6Qa78dPhmQ9Da+AAAA[0m[Pipeline] checkout
+[2026-10-22T21:00:30.731Z] Selected Git installation does not exist. Using Default
+[2026-10-22T21:00:30.731Z] The recommended git tool is: NONE
+[2026-10-22T21:00:30.731Z] No credentials specified
+[2026-10-22T21:00:30.731Z]  > git rev-parse --resolve-git-dir /home/onlin/.jenkins/workspace/software_security/.git # timeout=10
+[2026-10-22T21:00:30.735Z] Fetching changes from the remote Git repository
+[2026-10-22T21:00:30.738Z]  > git config remote.origin.url https://github.com/jenuni/au-26-software_security # timeout=10
+[2026-10-22T21:00:30.743Z] Fetching upstream changes from https://github.com/jenuni/au-26-software_security
+[2026-10-22T21:00:30.743Z]  > git --version # timeout=10
+[2026-10-22T21:00:30.746Z]  > git --version # 'git version 2.53.0'
+[2026-10-22T21:00:30.746Z]  > git fetch --tags --force --progress -- https://github.com/jenuni/au-26-software_security +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-22T21:00:31.441Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2026-10-22T21:00:31.446Z] Checking out Revision 956f35e6884fcefde06a4a7ebb283916e76934ff (refs/remotes/origin/main)
+[2026-10-22T21:00:31.446Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-22T21:00:31.449Z]  > git checkout -f 956f35e6884fcefde06a4a7ebb283916e76934ff # timeout=10
+[2026-10-22T21:00:31.458Z] Commit message: "use docker for the builds"
+[8mha:////4IoAFD8Iab68kIM8j/o6ITizE8AwkQvwADGADlXeABP9AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKi0CFEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNknKOtDrn3tP1ih7y++AAAA[0m[Pipeline] sh
+[2026-10-22T21:00:31.738Z] + rm -rf reports
+[2026-10-22T21:00:31.738Z] + mkdir -p reports/svc-logs
+[8mha:////4G39k4nmp2ulcuPpvbagsMcpPnZlKnAwNb8R6Rrcn03xAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIR6RCiSmul4QUmPowT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYMRPdJgKXZWeDeavMTEYbg6nkTPF9ExRXYoWpxa1tgs2HJCWFKUsJKwQeocR0smwVb26qEqp8hU5xTyd5RQWn2HJxQym5MK6QtzgN1t1JHp5/krgNn7BGVd59ofPoukFhO+AAAA[0m[Pipeline] }
+[8mha:////4DqgeN2EQnERa7W5thvXK5FElCourCAw4H4qqEIvj5LBAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIioEFCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDu9rm2hw+4R02vvgAAAA==[0m[Pipeline] // stage
+[8mha:////4L6XBAzK6/XZYqCfyDpE6Ao/5no6UVPUM6V+nQJb6jFEAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUICQG1Ik16sIJQhNC0uj/kqSkEyfiatyBQCUmPFi2Jes9X1AFDw15zazC3mDoDBvcqHNiiXx/cZSYpTPrCAM5xVqVWpLqONeWooJZRQkLDkuFnaNgUEdYcSvuonYCdX2KPm8HDqWRN3hAwTM5Ch+/ZfKwvo4yEP44fwEwDRHKzT7bdvd5Vm+sP66UwgAAAA==[0m[Pipeline] stage
+[8mha:////4EF7Q2+fRoRcoEChXBe3jIO28QWOJIoxjQi2qKsrDPLsAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUQjAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD/hYjrHCAAAA[0m[Pipeline] { (Setup tooling)
+[8mha:////4DjqOnxQvZKxu2WeVOJMO4btiGOxED/dnO2xy+APXO3sAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIUGDqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAEIWoEpvgAAAA==[0m[Pipeline] sh
+[2026-10-22T21:00:32.109Z] + PYBIN=
+[2026-10-22T21:00:32.109Z] + command -v python3.12
+[2026-10-22T21:00:32.109Z] + PYBIN=python3.12
+[2026-10-22T21:00:32.109Z] + break
+[2026-10-22T21:00:32.109Z] + python3.12 --version
+[2026-10-22T21:00:32.109Z] + echo Using interpreter: python3.12 (Python 3.12.15)
+[2026-10-22T21:00:32.109Z] Using interpreter: python3.12 (Python 3.12.15)
+[2026-10-22T21:00:32.109Z] + python3.12 -m venv .ci-venv
+[2026-10-22T21:00:33.972Z] + . .ci-venv/bin/activate
+[2026-10-22T21:00:33.972Z] + deactivate nondestructive
+[2026-10-22T21:00:33.972Z] + [ -n  ]
+[2026-10-22T21:00:33.972Z] + [ -n  ]
+[2026-10-22T21:00:33.972Z] + hash -r
+[2026-10-22T21:00:33.972Z] + [ -n  ]
+[2026-10-22T21:00:33.972Z] + unset VIRTUAL_ENV
+[2026-10-22T21:00:33.972Z] + unset VIRTUAL_ENV_PROMPT
+[2026-10-22T21:00:33.972Z] + [ ! nondestructive = nondestructive ]
+[2026-10-22T21:00:33.972Z] + uname
+[2026-10-22T21:00:33.972Z] + export VIRTUAL_ENV=/home/onlin/.jenkins/workspace/software_security/.ci-venv
+[2026-10-22T21:00:33.972Z] + _OLD_VIRTUAL_PATH=/home/onlin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/bin:/mnt/c/Users/onlin/miniconda3:/mnt/c/Users/onlin/miniconda3/Library/mingw-w64/bin:/mnt/c/Users/onlin/miniconda3/Library/usr/bin:/mnt/c/Users/onlin/miniconda3/Library/bin:/mnt/c/Users/onlin/miniconda3/Scripts:/mnt/c/Users/onlin/miniconda3/bin:/mnt/c/Users/onlin/miniconda3/condabin:/mnt/c/Program Files/glzr.io/GlazeWM/cli:/mnt/c/Program Files (x86)/OpenLogic/jre-8.0.482.08-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0:/mnt/c/windows/System32/OpenSSH:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Program Files/Java/jdk-25.0.2/bin:/mnt/c/msys64/ucrt64/bin:/mnt/c/Strawberry/c/bin:/mnt/c/Strawberry/perl/site/bin:/mnt/c/Strawberry/perl/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Cloudflare/Cloudflare WARP:/mnt/c/Program Files/glzr.io/Zebar:/mnt/c/sbt-2.0.7/sbt/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Vagrant/bin:/mnt/c/Program Files/WSL:/mnt/c/Users/onlin/scoop/apps/temurin17-jdk/current/bin:/mnt/c/Users/onlin/scoop/shims:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313/Scripts:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Launcher:/mnt/c/Users/onlin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/onlin/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/onlin/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/onlin/AppData/Roaming/npm:/mnt/c/Users/onlin/AppData/Local/JetBrains/Toolbox/scripts:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Users/onlin/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/mnt/c/Users/onlin/AppData/Local/Coursier/data/bin:/mnt/c/Program Files/Processing:/mnt/c/Users/onlin/AppData/Local/Microsoft/WinGet/Links:/snap/bin
+[2026-10-22T21:00:33.972Z] + PATH=/home/onlin/.jenkins/workspace/software_security/.ci-venv/bin:/home/onlin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/bin:/mnt/c/Users/onlin/miniconda3:/mnt/c/Users/onlin/miniconda3/Library/mingw-w64/bin:/mnt/c/Users/onlin/miniconda3/Library/usr/bin:/mnt/c/Users/onlin/miniconda3/Library/bin:/mnt/c/Users/onlin/miniconda3/Scripts:/mnt/c/Users/onlin/miniconda3/bin:/mnt/c/Users/onlin/miniconda3/condabin:/mnt/c/Program Files/glzr.io/GlazeWM/cli:/mnt/c/Program Files (x86)/OpenLogic/jre-8.0.482.08-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0:/mnt/c/windows/System32/OpenSSH:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Program Files/Java/jdk-25.0.2/bin:/mnt/c/msys64/ucrt64/bin:/mnt/c/Strawberry/c/bin:/mnt/c/Strawberry/perl/site/bin:/mnt/c/Strawberry/perl/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Cloudflare/Cloudflare WARP:/mnt/c/Program Files/glzr.io/Zebar:/mnt/c/sbt-2.0.7/sbt/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Vagrant/bin:/mnt/c/Program Files/WSL:/mnt/c/Users/onlin/scoop/apps/temurin17-jdk/current/bin:/mnt/c/Users/onlin/scoop/shims:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313/Scripts:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Launcher:/mnt/c/Users/onlin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/onlin/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/onlin/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/onlin/AppData/Roaming/npm:/mnt/c/Users/onlin/AppData/Local/JetBrains/Toolbox/scripts:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Users/onlin/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/mnt/c/Users/onlin/AppData/Local/Coursier/data/bin:/mnt/c/Program Files/Processing:/mnt/c/Users/onlin/AppData/Local/Microsoft/WinGet/Links:/snap/bin
+[2026-10-22T21:00:33.972Z] + export PATH
+[2026-10-22T21:00:33.972Z] + VIRTUAL_ENV_PROMPT=(.ci-venv) 
+[2026-10-22T21:00:33.972Z] + export VIRTUAL_ENV_PROMPT
+[2026-10-22T21:00:33.972Z] + [ -n  ]
+[2026-10-22T21:00:33.972Z] + [ -z  ]
+[2026-10-22T21:00:33.972Z] + _OLD_VIRTUAL_PS1=$ 
+[2026-10-22T21:00:33.972Z] + PS1=((.ci-venv) ) $ 
+[2026-10-22T21:00:33.972Z] + export PS1
+[2026-10-22T21:00:33.972Z] + hash -r
+[2026-10-22T21:00:33.972Z] + python -m pip install --upgrade pip
+[2026-10-22T21:00:34.222Z] Requirement already satisfied: pip in ./.ci-venv/lib/python3.12/site-packages (26.2.2)
+[2026-10-22T21:00:34.222Z] + pip install bandit pip-audit pytest requests
+[2026-10-22T21:00:34.473Z] Collecting bandit
+[2026-10-22T21:00:34.473Z]   Using cached bandit-1.9.4-py3-none-any.whl.metadata (7.1 kB)
+[2026-10-22T21:00:34.473Z] Collecting pip-audit
+[2026-10-22T21:00:34.473Z]   Using cached pip_audit-2.10.1-py3-none-any.whl.metadata (28 kB)
+[2026-10-22T21:00:34.473Z] Collecting pytest
+[2026-10-22T21:00:34.473Z]   Using cached pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+[2026-10-22T21:00:34.473Z] Collecting requests
+[2026-10-22T21:00:34.724Z]   Using cached requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+[2026-10-22T21:00:34.724Z] Collecting PyYAML>=5.3.1 (from bandit)
+[2026-10-22T21:00:34.724Z]   Using cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+[2026-10-22T21:00:34.724Z] Collecting stevedore>=1.20.0 (from bandit)
+[2026-10-22T21:00:34.724Z]   Using cached stevedore-5.9.1-py3-none-any.whl.metadata (2.3 kB)
+[2026-10-22T21:00:34.724Z] Collecting rich (from bandit)
+[2026-10-22T21:00:34.724Z]   Using cached rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+[2026-10-22T21:00:34.724Z] Collecting CacheControl>=0.13.0 (from CacheControl[filecache]>=0.13.0->pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached cachecontrol-0.14.4-py3-none-any.whl.metadata (3.1 kB)
+[2026-10-22T21:00:34.724Z] Collecting cyclonedx-python-lib<12,>=5 (from pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached cyclonedx_python_lib-11.12.0-py3-none-any.whl.metadata (6.9 kB)
+[2026-10-22T21:00:34.724Z] Collecting packaging>=23.0.0 (from pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+[2026-10-22T21:00:34.724Z] Collecting pip-api>=0.0.28 (from pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached pip_api-0.0.35-py3-none-any.whl.metadata (17 kB)
+[2026-10-22T21:00:34.724Z] Collecting pip-requirements-parser>=32.0.0 (from pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached pip_requirements_parser-32.0.1-py3-none-any.whl.metadata (9.3 kB)
+[2026-10-22T21:00:34.724Z] Collecting tomli>=2.2.1 (from pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached tomli-2.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+[2026-10-22T21:00:34.724Z] Collecting tomli-w>=1.2.0 (from pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
+[2026-10-22T21:00:34.724Z] Collecting platformdirs>=4.2.0 (from pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached platformdirs-4.13.5-py3-none-any.whl.metadata (5.5 kB)
+[2026-10-22T21:00:34.724Z] Collecting license-expression<31,>=30 (from cyclonedx-python-lib<12,>=5->pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached license_expression-30.4.4-py3-none-any.whl.metadata (11 kB)
+[2026-10-22T21:00:34.724Z] Collecting packageurl-python<2,>=0.11 (from cyclonedx-python-lib<12,>=5->pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached packageurl_python-0.17.6-py3-none-any.whl.metadata (5.1 kB)
+[2026-10-22T21:00:34.724Z] Collecting py-serializable<3.0.0,>=2.1.0 (from cyclonedx-python-lib<12,>=5->pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached py_serializable-2.1.0-py3-none-any.whl.metadata (4.3 kB)
+[2026-10-22T21:00:34.724Z] Collecting sortedcontainers<3.0.0,>=2.4.0 (from cyclonedx-python-lib<12,>=5->pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+[2026-10-22T21:00:34.724Z] Collecting typing_extensions<5.0,>=4.6 (from cyclonedx-python-lib<12,>=5->pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+[2026-10-22T21:00:34.724Z] Collecting boolean.py>=4.0 (from license-expression<31,>=30->cyclonedx-python-lib<12,>=5->pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached boolean_py-5.0-py3-none-any.whl.metadata (2.3 kB)
+[2026-10-22T21:00:34.724Z] Collecting defusedxml<0.8.0,>=0.7.1 (from py-serializable<3.0.0,>=2.1.0->cyclonedx-python-lib<12,>=5->pip-audit)
+[2026-10-22T21:00:34.724Z]   Using cached defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+[2026-10-22T21:00:34.724Z] Collecting iniconfig>=1.0.1 (from pytest)
+[2026-10-22T21:00:34.724Z]   Using cached iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+[2026-10-22T21:00:34.724Z] Collecting pluggy<2,>=1.5 (from pytest)
+[2026-10-22T21:00:34.724Z]   Using cached pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+[2026-10-22T21:00:34.724Z] Collecting pygments>=2.7.2 (from pytest)
+[2026-10-22T21:00:34.724Z]   Using cached pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+[2026-10-22T21:00:34.724Z] Collecting charset_normalizer<4,>=2 (from requests)
+[2026-10-22T21:00:34.724Z]   Using cached charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+[2026-10-22T21:00:34.975Z] Collecting idna<4,>=2.5 (from requests)
+[2026-10-22T21:00:34.975Z]   Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+[2026-10-22T21:00:34.975Z] Collecting urllib3<3,>=1.26 (from requests)
+[2026-10-22T21:00:34.975Z]   Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+[2026-10-22T21:00:34.975Z] Collecting certifi>=2023.5.7 (from requests)
+[2026-10-22T21:00:34.975Z]   Using cached certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)
+[2026-10-22T21:00:34.975Z] Collecting msgpack<2.0.0,>=0.5.2 (from CacheControl>=0.13.0->CacheControl[filecache]>=0.13.0->pip-audit)
+[2026-10-22T21:00:34.975Z]   Using cached msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+[2026-10-22T21:00:34.975Z] Collecting filelock>=3.8.0 (from CacheControl[filecache]>=0.13.0->pip-audit)
+[2026-10-22T21:00:34.975Z]   Using cached filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)
+[2026-10-22T21:00:34.975Z] Requirement already satisfied: pip in ./.ci-venv/lib/python3.12/site-packages (from pip-api>=0.0.28->pip-audit) (26.2.2)
+[2026-10-22T21:00:34.975Z] Collecting pyparsing (from pip-requirements-parser>=32.0.0->pip-audit)
+[2026-10-22T21:00:34.975Z]   Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+[2026-10-22T21:00:34.975Z] Collecting markdown-it-py>=2.2.0 (from rich->bandit)
+[2026-10-22T21:00:34.975Z]   Using cached markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+[2026-10-22T21:00:34.975Z] Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->bandit)
+[2026-10-22T21:00:34.975Z]   Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+[2026-10-22T21:00:34.975Z] Using cached bandit-1.9.4-py3-none-any.whl (134 kB)
+[2026-10-22T21:00:34.975Z] Using cached pip_audit-2.10.1-py3-none-any.whl (62 kB)
+[2026-10-22T21:00:34.975Z] Using cached cyclonedx_python_lib-11.12.0-py3-none-any.whl (529 kB)
+[2026-10-22T21:00:34.975Z] Using cached license_expression-30.4.4-py3-none-any.whl (120 kB)
+[2026-10-22T21:00:34.975Z] Using cached packageurl_python-0.17.6-py3-none-any.whl (36 kB)
+[2026-10-22T21:00:34.975Z] Using cached py_serializable-2.1.0-py3-none-any.whl (23 kB)
+[2026-10-22T21:00:34.975Z] Using cached defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+[2026-10-22T21:00:34.975Z] Using cached sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+[2026-10-22T21:00:34.975Z] Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+[2026-10-22T21:00:34.975Z] Using cached pytest-9.1.1-py3-none-any.whl (386 kB)
+[2026-10-22T21:00:34.975Z] Using cached pluggy-1.7.0-py3-none-any.whl (27 kB)
+[2026-10-22T21:00:34.975Z] Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+[2026-10-22T21:00:34.975Z] Using cached charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+[2026-10-22T21:00:34.975Z] Using cached idna-3.20-py3-none-any.whl (69 kB)
+[2026-10-22T21:00:34.975Z] Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+[2026-10-22T21:00:34.975Z] Using cached boolean_py-5.0-py3-none-any.whl (26 kB)
+[2026-10-22T21:00:34.975Z] Using cached cachecontrol-0.14.4-py3-none-any.whl (22 kB)
+[2026-10-22T21:00:34.975Z] Using cached msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (472 kB)
+[2026-10-22T21:00:34.975Z] Using cached certifi-2026.10.19-py3-none-any.whl (136 kB)
+[2026-10-22T21:00:34.975Z] Using cached filelock-4.2.4-py3-none-any.whl (162 kB)
+[2026-10-22T21:00:34.975Z] Using cached iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+[2026-10-22T21:00:34.975Z] Using cached packaging-26.3-py3-none-any.whl (129 kB)
+[2026-10-22T21:00:34.975Z] Using cached pip_api-0.0.35-py3-none-any.whl (123 kB)
+[2026-10-22T21:00:34.975Z] Using cached pip_requirements_parser-32.0.1-py3-none-any.whl (35 kB)
+[2026-10-22T21:00:34.975Z] Using cached platformdirs-4.13.5-py3-none-any.whl (32 kB)
+[2026-10-22T21:00:34.975Z] Using cached pygments-2.21.0-py3-none-any.whl (1.3 MB)
+[2026-10-22T21:00:34.975Z] Using cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+[2026-10-22T21:00:34.975Z] Using cached rich-15.0.0-py3-none-any.whl (310 kB)
+[2026-10-22T21:00:34.975Z] Using cached markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+[2026-10-22T21:00:34.975Z] Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+[2026-10-22T21:00:34.975Z] Using cached stevedore-5.9.1-py3-none-any.whl (54 kB)
+[2026-10-22T21:00:34.975Z] Using cached tomli-2.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (286 kB)
+[2026-10-22T21:00:34.975Z] Using cached tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
+[2026-10-22T21:00:34.975Z] Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)
+[2026-10-22T21:00:34.975Z] Installing collected packages: sortedcontainers, boolean.py, urllib3, typing_extensions, tomli-w, tomli, stevedore, PyYAML, pyparsing, pygments, pluggy, platformdirs, pip-api, packaging, packageurl-python, msgpack, mdurl, license-expression, iniconfig, idna, filelock, defusedxml, charset_normalizer, certifi, requests, pytest, py-serializable, pip-requirements-parser, markdown-it-py, rich, cyclonedx-python-lib, CacheControl, bandit, pip-audit
+[2026-10-22T21:00:40.172Z] 
+[2026-10-22T21:00:40.172Z] Successfully installed CacheControl-0.14.4 PyYAML-6.0.3 bandit-1.9.4 boolean.py-5.0 certifi-2026.10.19 charset_normalizer-3.5.2 cyclonedx-python-lib-11.12.0 defusedxml-0.7.1 filelock-4.2.4 idna-3.20 iniconfig-2.3.1 license-expression-30.4.4 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.3 packageurl-python-0.17.6 packaging-26.3 pip-api-0.0.35 pip-audit-2.10.1 pip-requirements-parser-32.0.1 platformdirs-4.13.5 pluggy-1.7.0 py-serializable-2.1.0 pygments-2.21.0 pyparsing-3.3.3 pytest-9.1.1 requests-2.34.2 rich-15.0.0 sortedcontainers-2.4.0 stevedore-5.9.1 tomli-2.5.0 tomli-w-1.2.0 typing_extensions-4.16.0 urllib3-2.8.0
+[2026-10-22T21:00:40.172Z] + docker compose version
+[2026-10-22T21:00:40.172Z] Docker Compose version 2.40.3+ds1-0ubuntu1
+[8mha:////4McdxR3oCpfQ79DWVgkrg8sVyw+JD8SLxZO/LvHrRIjnAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiISEKRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyu//U7g3QKkBhvgAAAA==[0m[Pipeline] }
+[8mha:////4Fb9zCpNluYrPk7I1JDTIIxjBZEbhy0nuutWksfApZH7AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIQokRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyu//U7g2TqBHnvgAAAA==[0m[Pipeline] // stage
+[8mha:////4JmdolLFa3tZ4Ud54Z9pTCBmSqwaG2EpxuH17NQ6AB8fAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUsCCEOrFGXThBaEJIGv1fkpR04kRcjTsQqMSEB8u2ZL3nC6rgoSGvmVXYGwydYYMbdU4ske8vjhKzdGYdYSCnWKtSS1Id59pSVDCrKGHBYamwcxQM6ggrbsVd1E6grk/R5+3AoTTyBg8oeCZH4eO3TB7W11EGwh/nLwCmIUK52WXb7j/P6g1yLDAowgAAAA==[0m[Pipeline] stage
+[8mha:////4MskmgQZvChapHEvFGtJGEqsPvaApRmeeZJHUK0/kKpKAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogUwYRQJ9aoCycITQhJo/9LkpJOnIircQcClZjwYNmWrPd8QRU8NOQ1swp7g6EzbHCjzokl8v3FUWKWzqwjDOQUa1VqSarjXFuKCmYVJSw4LBV2joJBHWHFrbiL2gnU9Sn6vB04lEbe4AEFz+QofPyWycP6OspA+OP8BcA0RCi3+2y7zedZvQH4j6CMwgAAAA==[0m[Pipeline] { (Static analysis (Bandit))
+[8mha:////4I/Wln+Z7RAc3h+ddeGW6ruqmzhydgqemdCCSqDVZgnJAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICokRUaS03vMDExjix7oztkFS8iK/xBwKRqNhitbPNPF+wTBGOHC22hjpHqXEYfG+nhQPH7uJ5wJbP2DAl9galGSRrU88oORuYU5SwELAy1HhOjmyGtWjVXVVeka1OOU7fQUDp9A0eUIjJnFXMXxgjbK69Tkw/z18BjCFDud9+ahfewYmQ+b4AAAA=[0m[Pipeline] sh
+[2026-10-22T21:00:40.544Z] + . .ci-venv/bin/activate
+[2026-10-22T21:00:40.544Z] + deactivate nondestructive
+[2026-10-22T21:00:40.544Z] + [ -n  ]
+[2026-10-22T21:00:40.544Z] + [ -n  ]
+[2026-10-22T21:00:40.544Z] + hash -r
+[2026-10-22T21:00:40.544Z] + [ -n  ]
+[2026-10-22T21:00:40.544Z] + unset VIRTUAL_ENV
+[2026-10-22T21:00:40.544Z] + unset VIRTUAL_ENV_PROMPT
+[2026-10-22T21:00:40.544Z] + [ ! nondestructive = nondestructive ]
+[2026-10-22T21:00:40.544Z] + uname
+[2026-10-22T21:00:40.544Z] + export VIRTUAL_ENV=/home/onlin/.jenkins/workspace/software_security/.ci-venv
+[2026-10-22T21:00:40.544Z] + _OLD_VIRTUAL_PATH=/home/onlin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/bin:/mnt/c/Users/onlin/miniconda3:/mnt/c/Users/onlin/miniconda3/Library/mingw-w64/bin:/mnt/c/Users/onlin/miniconda3/Library/usr/bin:/mnt/c/Users/onlin/miniconda3/Library/bin:/mnt/c/Users/onlin/miniconda3/Scripts:/mnt/c/Users/onlin/miniconda3/bin:/mnt/c/Users/onlin/miniconda3/condabin:/mnt/c/Program Files/glzr.io/GlazeWM/cli:/mnt/c/Program Files (x86)/OpenLogic/jre-8.0.482.08-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0:/mnt/c/windows/System32/OpenSSH:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Program Files/Java/jdk-25.0.2/bin:/mnt/c/msys64/ucrt64/bin:/mnt/c/Strawberry/c/bin:/mnt/c/Strawberry/perl/site/bin:/mnt/c/Strawberry/perl/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Cloudflare/Cloudflare WARP:/mnt/c/Program Files/glzr.io/Zebar:/mnt/c/sbt-2.0.7/sbt/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Vagrant/bin:/mnt/c/Program Files/WSL:/mnt/c/Users/onlin/scoop/apps/temurin17-jdk/current/bin:/mnt/c/Users/onlin/scoop/shims:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313/Scripts:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Launcher:/mnt/c/Users/onlin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/onlin/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/onlin/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/onlin/AppData/Roaming/npm:/mnt/c/Users/onlin/AppData/Local/JetBrains/Toolbox/scripts:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Users/onlin/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/mnt/c/Users/onlin/AppData/Local/Coursier/data/bin:/mnt/c/Program Files/Processing:/mnt/c/Users/onlin/AppData/Local/Microsoft/WinGet/Links:/snap/bin
+[2026-10-22T21:00:40.544Z] + PATH=/home/onlin/.jenkins/workspace/software_security/.ci-venv/bin:/home/onlin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/bin:/mnt/c/Users/onlin/miniconda3:/mnt/c/Users/onlin/miniconda3/Library/mingw-w64/bin:/mnt/c/Users/onlin/miniconda3/Library/usr/bin:/mnt/c/Users/onlin/miniconda3/Library/bin:/mnt/c/Users/onlin/miniconda3/Scripts:/mnt/c/Users/onlin/miniconda3/bin:/mnt/c/Users/onlin/miniconda3/condabin:/mnt/c/Program Files/glzr.io/GlazeWM/cli:/mnt/c/Program Files (x86)/OpenLogic/jre-8.0.482.08-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0:/mnt/c/windows/System32/OpenSSH:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Program Files/Java/jdk-25.0.2/bin:/mnt/c/msys64/ucrt64/bin:/mnt/c/Strawberry/c/bin:/mnt/c/Strawberry/perl/site/bin:/mnt/c/Strawberry/perl/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Cloudflare/Cloudflare WARP:/mnt/c/Program Files/glzr.io/Zebar:/mnt/c/sbt-2.0.7/sbt/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Vagrant/bin:/mnt/c/Program Files/WSL:/mnt/c/Users/onlin/scoop/apps/temurin17-jdk/current/bin:/mnt/c/Users/onlin/scoop/shims:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313/Scripts:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Launcher:/mnt/c/Users/onlin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/onlin/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/onlin/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/onlin/AppData/Roaming/npm:/mnt/c/Users/onlin/AppData/Local/JetBrains/Toolbox/scripts:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Users/onlin/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/mnt/c/Users/onlin/AppData/Local/Coursier/data/bin:/mnt/c/Program Files/Processing:/mnt/c/Users/onlin/AppData/Local/Microsoft/WinGet/Links:/snap/bin
+[2026-10-22T21:00:40.544Z] + export PATH
+[2026-10-22T21:00:40.544Z] + VIRTUAL_ENV_PROMPT=(.ci-venv) 
+[2026-10-22T21:00:40.544Z] + export VIRTUAL_ENV_PROMPT
+[2026-10-22T21:00:40.544Z] + [ -n  ]
+[2026-10-22T21:00:40.544Z] + [ -z  ]
+[2026-10-22T21:00:40.544Z] + _OLD_VIRTUAL_PS1=$ 
+[2026-10-22T21:00:40.544Z] + PS1=((.ci-venv) ) $ 
+[2026-10-22T21:00:40.544Z] + export PS1
+[2026-10-22T21:00:40.544Z] + hash -r
+[2026-10-22T21:00:40.544Z] + bandit -r code_fixed/src code_fixed/external_packages -f json -o reports/bandit.json
+[2026-10-22T21:00:40.544Z] [main]	INFO	profile include tests: None
+[2026-10-22T21:00:40.544Z] [main]	INFO	profile exclude tests: None
+[2026-10-22T21:00:40.544Z] [main]	INFO	cli include tests: None
+[2026-10-22T21:00:40.544Z] [main]	INFO	cli exclude tests: None
+[2026-10-22T21:00:40.544Z] [json]	INFO	JSON output written to file: reports/bandit.json
+[2026-10-22T21:00:40.544Z] + true
+[2026-10-22T21:00:40.544Z] + bandit -r code_fixed/src code_fixed/external_packages -f txt -o reports/bandit.txt
+[2026-10-22T21:00:40.544Z] [main]	INFO	profile include tests: None
+[2026-10-22T21:00:40.544Z] [main]	INFO	profile exclude tests: None
+[2026-10-22T21:00:40.544Z] [main]	INFO	cli include tests: None
+[2026-10-22T21:00:40.544Z] [main]	INFO	cli exclude tests: None
+[2026-10-22T21:00:40.544Z] [main]	INFO	running on Python 3.12.15
+[2026-10-22T21:00:40.795Z] [text]	INFO	Text output written to file: reports/bandit.txt
+[2026-10-22T21:00:40.795Z] + true
+[8mha:////4JO34XPG/391GRxlxKkDa3XGnSea1q3hIE3Z4dT4C/ReAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCoERUaS03vMDExjix7oztkFS8iK/xBwKRqNhitbPNPF+wTBGOHC22hjpHqXEYfG+nhQPH7uJ5wJbP2DAl9galGSRrU88oORuYU5SwELAy1HhOjmyGtWjVXVVeka1OOU7fQUDp9A0eUIjJnFXMXxgjbK69Tkw/z18BjCFkKPe7T23fGXWL/r4AAAA=[0m[Pipeline] }
+[8mha:////4AyDp6VtQzshQ7UoJc0HRQDNN4rFNI735OUF5k/8qgFQAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMKRSIUQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJyjrOtf+8AFZLxBVvgAAAA==[0m[Pipeline] // stage
+[8mha:////4EPkVtoHBNsmYEbzlrgWoyQhrP8BjFquJncKbRH65znOAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUCCQG1Ik16sIJQhNC0uj/kqSkEyfiatyBQCUmPFi2Jes9X1AFDw15zazC3mDoDBvcqHNiiXx/cZSYpTPrCAM5xVqVWpLqONeWooJZRQkLDkuFnaNgUEdYcSvuonYCdX2KPm8HDqWRN3hAwTM5Ch+/ZfKwvo4yEP44fwEwDRHKzT7bdvd5Vm8YNNkywgAAAA==[0m[Pipeline] stage
+[8mha:////4JHOGnFxUfUyv/PxpCEKcPOHkFpS5fRGG6ULW2XjmmDKAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0ACbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxASMfXIzCAAAA[0m[Pipeline] { (Gate: Static analysis)
+[8mha:////4Pm2XjdBWFr14+wyAdVVVdTBkwFukUE9izpYeM5hw5kxAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIGgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN6Ew6eS+AAAA[0m[Pipeline] sh
+[2026-10-22T21:00:41.166Z] + . .ci-venv/bin/activate
+[2026-10-22T21:00:41.166Z] + deactivate nondestructive
+[2026-10-22T21:00:41.166Z] + [ -n  ]
+[2026-10-22T21:00:41.166Z] + [ -n  ]
+[2026-10-22T21:00:41.166Z] + hash -r
+[2026-10-22T21:00:41.166Z] + [ -n  ]
+[2026-10-22T21:00:41.166Z] + unset VIRTUAL_ENV
+[2026-10-22T21:00:41.166Z] + unset VIRTUAL_ENV_PROMPT
+[2026-10-22T21:00:41.166Z] + [ ! nondestructive = nondestructive ]
+[2026-10-22T21:00:41.166Z] + uname
+[2026-10-22T21:00:41.166Z] + export VIRTUAL_ENV=/home/onlin/.jenkins/workspace/software_security/.ci-venv
+[2026-10-22T21:00:41.166Z] + _OLD_VIRTUAL_PATH=/home/onlin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/bin:/mnt/c/Users/onlin/miniconda3:/mnt/c/Users/onlin/miniconda3/Library/mingw-w64/bin:/mnt/c/Users/onlin/miniconda3/Library/usr/bin:/mnt/c/Users/onlin/miniconda3/Library/bin:/mnt/c/Users/onlin/miniconda3/Scripts:/mnt/c/Users/onlin/miniconda3/bin:/mnt/c/Users/onlin/miniconda3/condabin:/mnt/c/Program Files/glzr.io/GlazeWM/cli:/mnt/c/Program Files (x86)/OpenLogic/jre-8.0.482.08-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0:/mnt/c/windows/System32/OpenSSH:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Program Files/Java/jdk-25.0.2/bin:/mnt/c/msys64/ucrt64/bin:/mnt/c/Strawberry/c/bin:/mnt/c/Strawberry/perl/site/bin:/mnt/c/Strawberry/perl/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Cloudflare/Cloudflare WARP:/mnt/c/Program Files/glzr.io/Zebar:/mnt/c/sbt-2.0.7/sbt/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Vagrant/bin:/mnt/c/Program Files/WSL:/mnt/c/Users/onlin/scoop/apps/temurin17-jdk/current/bin:/mnt/c/Users/onlin/scoop/shims:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313/Scripts:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Launcher:/mnt/c/Users/onlin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/onlin/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/onlin/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/onlin/AppData/Roaming/npm:/mnt/c/Users/onlin/AppData/Local/JetBrains/Toolbox/scripts:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Users/onlin/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/mnt/c/Users/onlin/AppData/Local/Coursier/data/bin:/mnt/c/Program Files/Processing:/mnt/c/Users/onlin/AppData/Local/Microsoft/WinGet/Links:/snap/bin
+[2026-10-22T21:00:41.166Z] + PATH=/home/onlin/.jenkins/workspace/software_security/.ci-venv/bin:/home/onlin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/bin:/mnt/c/Users/onlin/miniconda3:/mnt/c/Users/onlin/miniconda3/Library/mingw-w64/bin:/mnt/c/Users/onlin/miniconda3/Library/usr/bin:/mnt/c/Users/onlin/miniconda3/Library/bin:/mnt/c/Users/onlin/miniconda3/Scripts:/mnt/c/Users/onlin/miniconda3/bin:/mnt/c/Users/onlin/miniconda3/condabin:/mnt/c/Program Files/glzr.io/GlazeWM/cli:/mnt/c/Program Files (x86)/OpenLogic/jre-8.0.482.08-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0:/mnt/c/windows/System32/OpenSSH:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Program Files/Java/jdk-25.0.2/bin:/mnt/c/msys64/ucrt64/bin:/mnt/c/Strawberry/c/bin:/mnt/c/Strawberry/perl/site/bin:/mnt/c/Strawberry/perl/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Cloudflare/Cloudflare WARP:/mnt/c/Program Files/glzr.io/Zebar:/mnt/c/sbt-2.0.7/sbt/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Vagrant/bin:/mnt/c/Program Files/WSL:/mnt/c/Users/onlin/scoop/apps/temurin17-jdk/current/bin:/mnt/c/Users/onlin/scoop/shims:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313/Scripts:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Launcher:/mnt/c/Users/onlin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/onlin/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/onlin/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/onlin/AppData/Roaming/npm:/mnt/c/Users/onlin/AppData/Local/JetBrains/Toolbox/scripts:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Users/onlin/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/mnt/c/Users/onlin/AppData/Local/Coursier/data/bin:/mnt/c/Program Files/Processing:/mnt/c/Users/onlin/AppData/Local/Microsoft/WinGet/Links:/snap/bin
+[2026-10-22T21:00:41.166Z] + export PATH
+[2026-10-22T21:00:41.166Z] + VIRTUAL_ENV_PROMPT=(.ci-venv) 
+[2026-10-22T21:00:41.166Z] + export VIRTUAL_ENV_PROMPT
+[2026-10-22T21:00:41.166Z] + [ -n  ]
+[2026-10-22T21:00:41.166Z] + [ -z  ]
+[2026-10-22T21:00:41.166Z] + _OLD_VIRTUAL_PS1=$ 
+[2026-10-22T21:00:41.166Z] + PS1=((.ci-venv) ) $ 
+[2026-10-22T21:00:41.166Z] + export PS1
+[2026-10-22T21:00:41.166Z] + hash -r
+[2026-10-22T21:00:41.166Z] + bandit -r code_fixed/src code_fixed/external_packages --severity-level medium --confidence-level medium -q
+[8mha:////4NBqVP6yqbzbxQOZ8PSpFjJVwujwFSoZF+XoU+WsfmWOAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIESBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQElECzevgAAAA==[0m[Pipeline] }
+[8mha:////4L5WMdc+iGNY6kqW4M0duJ79L4bJ9+TPm1YtBDE0KxTHAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSQIGEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQFmkn1YvgAAAA==[0m[Pipeline] // stage
+[8mha:////4O1nJ+p1Q+qnnUmRjVHk0lYoGq38R4mEerP5MmrBEwtGAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUiAEh1Ik16sIJQhNC0uj/kqSkEyfiatyBQCUmPFi2Jes9X1AFDw15zazC3mDoDBvcqHNiiXx/cZSYpTPrCAM5xVqVWpLqONeWooJZRQkLDkuFnaNgUEdYcSvuonYCdX2KPm8HDqWRN3hAwTM5Ch+/ZfKwvo4yEP44fwEwDRHKzS7bdv95Vm/GJ0eOwgAAAA==[0m[Pipeline] stage
+[8mha:////4MCDw9lrHtSMlbK2Dhc2FoL2ZsMlXSwPwynRYEqHDeOoAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogUCRaEOrFGXThBaEJIGv1fkpR04kRcjTsQqMSEB8u2ZL3nC6rgoSGvmVXYGwydYYMbdU4ske8vjhKzdGYdYSCnWKtSS1Id59pSVDCrKGHBYamwcxQM6ggrbsVd1E6grk/R5+3AoTTyBg8oeCZH4eO3TB7W11EGwh/nLwCmIUK53WfbbT7P6g0Z/aLSwgAAAA==[0m[Pipeline] { (Dependency analysis (pip-audit))
+[8mha:////4PzQjbo6/7m51uCThSDvAUcfz9r5sltuKTIo1r84usvCAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICEh2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBl2WGva+AAAA[0m[Pipeline] sh
+[2026-10-22T21:00:41.536Z] + . .ci-venv/bin/activate
+[2026-10-22T21:00:41.536Z] + deactivate nondestructive
+[2026-10-22T21:00:41.536Z] + [ -n  ]
+[2026-10-22T21:00:41.536Z] + [ -n  ]
+[2026-10-22T21:00:41.536Z] + hash -r
+[2026-10-22T21:00:41.536Z] + [ -n  ]
+[2026-10-22T21:00:41.536Z] + unset VIRTUAL_ENV
+[2026-10-22T21:00:41.536Z] + unset VIRTUAL_ENV_PROMPT
+[2026-10-22T21:00:41.536Z] + [ ! nondestructive = nondestructive ]
+[2026-10-22T21:00:41.536Z] + uname
+[2026-10-22T21:00:41.536Z] + export VIRTUAL_ENV=/home/onlin/.jenkins/workspace/software_security/.ci-venv
+[2026-10-22T21:00:41.536Z] + _OLD_VIRTUAL_PATH=/home/onlin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/bin:/mnt/c/Users/onlin/miniconda3:/mnt/c/Users/onlin/miniconda3/Library/mingw-w64/bin:/mnt/c/Users/onlin/miniconda3/Library/usr/bin:/mnt/c/Users/onlin/miniconda3/Library/bin:/mnt/c/Users/onlin/miniconda3/Scripts:/mnt/c/Users/onlin/miniconda3/bin:/mnt/c/Users/onlin/miniconda3/condabin:/mnt/c/Program Files/glzr.io/GlazeWM/cli:/mnt/c/Program Files (x86)/OpenLogic/jre-8.0.482.08-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0:/mnt/c/windows/System32/OpenSSH:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Program Files/Java/jdk-25.0.2/bin:/mnt/c/msys64/ucrt64/bin:/mnt/c/Strawberry/c/bin:/mnt/c/Strawberry/perl/site/bin:/mnt/c/Strawberry/perl/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Cloudflare/Cloudflare WARP:/mnt/c/Program Files/glzr.io/Zebar:/mnt/c/sbt-2.0.7/sbt/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Vagrant/bin:/mnt/c/Program Files/WSL:/mnt/c/Users/onlin/scoop/apps/temurin17-jdk/current/bin:/mnt/c/Users/onlin/scoop/shims:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313/Scripts:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Launcher:/mnt/c/Users/onlin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/onlin/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/onlin/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/onlin/AppData/Roaming/npm:/mnt/c/Users/onlin/AppData/Local/JetBrains/Toolbox/scripts:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Users/onlin/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/mnt/c/Users/onlin/AppData/Local/Coursier/data/bin:/mnt/c/Program Files/Processing:/mnt/c/Users/onlin/AppData/Local/Microsoft/WinGet/Links:/snap/bin
+[2026-10-22T21:00:41.536Z] + PATH=/home/onlin/.jenkins/workspace/software_security/.ci-venv/bin:/home/onlin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/bin:/mnt/c/Users/onlin/miniconda3:/mnt/c/Users/onlin/miniconda3/Library/mingw-w64/bin:/mnt/c/Users/onlin/miniconda3/Library/usr/bin:/mnt/c/Users/onlin/miniconda3/Library/bin:/mnt/c/Users/onlin/miniconda3/Scripts:/mnt/c/Users/onlin/miniconda3/bin:/mnt/c/Users/onlin/miniconda3/condabin:/mnt/c/Program Files/glzr.io/GlazeWM/cli:/mnt/c/Program Files (x86)/OpenLogic/jre-8.0.482.08-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0:/mnt/c/windows/System32/OpenSSH:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Program Files/Java/jdk-25.0.2/bin:/mnt/c/msys64/ucrt64/bin:/mnt/c/Strawberry/c/bin:/mnt/c/Strawberry/perl/site/bin:/mnt/c/Strawberry/perl/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Cloudflare/Cloudflare WARP:/mnt/c/Program Files/glzr.io/Zebar:/mnt/c/sbt-2.0.7/sbt/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Vagrant/bin:/mnt/c/Program Files/WSL:/mnt/c/Users/onlin/scoop/apps/temurin17-jdk/current/bin:/mnt/c/Users/onlin/scoop/shims:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313/Scripts:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Python313:/mnt/c/Users/onlin/AppData/Local/Programs/Python/Launcher:/mnt/c/Users/onlin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/onlin/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/onlin/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/onlin/AppData/Roaming/npm:/mnt/c/Users/onlin/AppData/Local/JetBrains/Toolbox/scripts:/mnt/c/Program Files/GnuPG/bin:/mnt/c/Users/onlin/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/mnt/c/Users/onlin/AppData/Local/Coursier/data/bin:/mnt/c/Program Files/Processing:/mnt/c/Users/onlin/AppData/Local/Microsoft/WinGet/Links:/snap/bin
+[2026-10-22T21:00:41.536Z] + export PATH
+[2026-10-22T21:00:41.536Z] + VIRTUAL_ENV_PROMPT=(.ci-venv) 
+[2026-10-22T21:00:41.536Z] + export VIRTUAL_ENV_PROMPT
+[2026-10-22T21:00:41.536Z] + [ -n  ]
+[2026-10-22T21:00:41.536Z] + [ -z  ]
+[2026-10-22T21:00:41.536Z] + _OLD_VIRTUAL_PS1=$ 
+[2026-10-22T21:00:41.536Z] + PS1=((.ci-venv) ) $ 
+[2026-10-22T21:00:41.536Z] + export PS1
+[2026-10-22T21:00:41.536Z] + hash -r
+[2026-10-22T21:00:41.536Z] + status=0
+[2026-10-22T21:00:41.536Z] + echo code_fixed/src/app_api/requirements.txt
+[2026-10-22T21:00:41.536Z] + awk -F/ {print $(NF-1)}
+[2026-10-22T21:00:41.536Z] + name=app_api
+[2026-10-22T21:00:41.536Z] + pip-audit -r code_fixed/src/app_api/requirements.txt -f json -o reports/pip-audit-app_api.json
+[2026-10-22T21:00:46.733Z] Found 18 known vulnerabilities in 2 packages
+[2026-10-22T21:00:46.733Z] + status=1
+[2026-10-22T21:00:46.733Z] + pip-audit -r code_fixed/src/app_api/requirements.txt -f columns
+[2026-10-22T21:00:50.858Z] + true
+[2026-10-22T21:00:50.858Z] + echo code_fixed/src/message_vault/requirements.txt
+[2026-10-22T21:00:50.858Z] + awk -F/ {print $(NF-1)}
+[2026-10-22T21:00:50.858Z] + name=message_vault
+[2026-10-22T21:00:50.858Z] + pip-audit -r code_fixed/src/message_vault/requirements.txt -f json -o reports/pip-audit-message_vault.json
+[2026-10-22T21:00:54.982Z] Found 14 known vulnerabilities in 1 package
+[2026-10-22T21:00:54.982Z] + status=1
+[2026-10-22T21:00:54.982Z] + pip-audit -r code_fixed/src/message_vault/requirements.txt -f columns
+[2026-10-22T21:01:00.179Z] + true
+[2026-10-22T21:01:00.179Z] + echo code_fixed/src/processing_worker/requirements.txt
+[2026-10-22T21:01:00.179Z] + awk -F/ {print $(NF-1)}
+[2026-10-22T21:01:00.179Z] + name=processing_worker
+[2026-10-22T21:01:00.179Z] + pip-audit -r code_fixed/src/processing_worker/requirements.txt -f json -o reports/pip-audit-processing_worker.json
+[2026-10-22T21:01:04.304Z] Found 18 known vulnerabilities in 2 packages
+[2026-10-22T21:01:04.304Z] + status=1
+[2026-10-22T21:01:04.304Z] + pip-audit -r code_fixed/src/processing_worker/requirements.txt -f columns
+[2026-10-22T21:01:08.430Z] + true
+[2026-10-22T21:01:08.430Z] + echo 1
+[8mha:////4NoCY4fWv1uEWnDEPU6wfx0/lYL4RwhZ/ZTPd99A/8K/AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCEB2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7nffWr7BlDdbXS+AAAA[0m[Pipeline] }
+[8mha:////4He5CysYvi4wUHpAr2nlTTYrKc8l98CyWfYwRVEHRDHMAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJShAYhqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJyj3da768AGWIKyJvgAAAA==[0m[Pipeline] // stage
+[8mha:////4KVaQXAmGr5M6C2yGcNivxxDnfQ7i9hlAveL0IAhL7N6AAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUSJUYEFPXKAsnCEkIaaP/S5LSTpyIq3EHApWY8GDZlqz3fEEVAxwpWNYZ7B1G5djgR5sTmyj0F08T6+jMFGEkb5gwkyBt2qUKSgYWFSWsOKwNKk/RoU2w4Z28y9pLtPUphbwdOJRO3+ABBc/kJEP6ljnA9jrqSPjj/AXAPCQod/tsTfN5Vm+WCn73wgAAAA==[0m[Pipeline] stage
+[8mha:////4MVM3qBTcZme/TTmhxXLAPqlK1jFRc9ifGEzUv/5uxTtAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0KRNiYo2ycILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMUAJwqGOY2dxdha1vvRzIllCt3NU2aOrqwljOQ1EzoLUvq8VkFJw6qihA2HrcbWU7RoEuy4kw9Ze4mmvqQwb0cOpVUDPKHgMznJkL5lCrC/jyoS/jh/ATD1CcqmWeywPKsPIshjPcIAAAA=[0m[Pipeline] { (Gate: Dependencies)
+[8mha:////4IuVdEQ8YxzOKp5bbIHUzbkZXSiYOvt/MJrQuMqgdCJ4AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0ARbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxAUxleXrCAAAA[0m[Pipeline] script
+[8mha:////4OVK++Rja9Suvs+L3w09Q/BLRagD7xXS3GfTU3K9bZHSAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0QTAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD+jQxyjCAAAA[0m[Pipeline] {
+[8mha:////4PiprbiDFexJk/UOW/3gVChT7D866c7TDyQCIvVRJ9OhAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSIIGEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAGaE3/ivgAAAA==[0m[Pipeline] sh
+[2026-10-22T21:01:08.843Z] + cat reports/.dep-audit-status
+[8mha:////4Iixkjja8vI9+8MH6VYkbCpivWb/+fuQmHbgYtsYfgKoAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSICGEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAHbImT7vgAAAA==[0m[Pipeline] error
+[8mha:////4IfJdEyZOpBTn4PKL5g9IyMKW+nvODGTzFFK2TgyYHl6AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCAaJAqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDut7l2hw9M4rYBvgAAAA==[0m[Pipeline] }
+[8mha:////4PIW6SAcgQ65fyWHt48gcc9CtGP4fy2Oj67Yifz3O7qcAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJKBBqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDut7l2hw9/Ae29vgAAAA==[0m[Pipeline] // script
+[8mha:////4GW/LixIe3ebdhHgcJmqTOG5VgbJrH/3xv+he1uzWdfiAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIVIhqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJyjrfa5D/QFrInCivgAAAA==[0m[Pipeline] }
+[8mha:////4MGFCEYRTy8H4wHXgaGY6t9HBv8tZo6wpyEpPAEJ//WRAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIpCBWiSmul4QUmPowT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYMRPdJgKXZWeDeavMTEYbg6nkTPF9ExRXYoWpxa1tgs2HJCWFKUsJKwQeocR0smwVb26qEqp8hU5xTyd5RQWn2HJxQym5MK6QtzgN1t1JHp5/krgNn7BOVhn6uuP1jBKx6+AAAA[0m[Pipeline] // stage
+[8mha:////4HoDIy+ZRBjNWx93AElejAxEJrNYLLGJFZcZwOD8CC5tAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUSCAG1Ik16sIJQhNC0uj/kqSkEyfiatyBQCUmPFi2Jes9X1AFDw15zazC3mDoDBvcqHNiiXx/cZSYpTPrCAM5xVqVWpLqONeWooJZRQkLDkuFnaNgUEdYcSvuonYCdX2KPm8HDqWRN3hAwTM5Ch+/ZfKwvo4yEP44fwEwDRHKzT7bbvt5Vm8iAQlRwgAAAA==[0m[Pipeline] stage
+[8mha:////4KQKLcR87HeOmLYCeK38eVQ3Joq2Nd4f0CUGK/PTBatHAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoh0oRNiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsP+Y+xAMIAAAA=[0m[Pipeline] { (Build images)
+Stage "Build images" skipped due to earlier failure(s)
+[8mha:////4CldUuxGPfZRel0Nke11/BGwMrUs2m1X9/X8fBoL5xkRAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSxcaxsmVoPAEmiBDmfwJEUnkir+YdRDNj5RY7+7Z5zxesY4AjBc2swsFg7AzzbtJlsUxhuDrKzNKFdYSRnGJCZUG9Oi0oKClYUtWw4rBR2DmKBnWCLbfyLhsnUTfnFMp34FCbfoQHVLyYkwzpC3OA3W3qI+HP81cAs09Qt+2n9v4NlEULJr4AAAA=[0m[Pipeline] getContext
+[8mha:////4GVeQ5vDMJNvTXysbQbFmfvxUEvfOcMGA7WQpYVtET9rAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSZSwcK1uGxhNggghh/idAJJUn8mreQTQzVm6xs2+b93zBOgY4UtDMKhwMxs4w7yZdFssUhqujzCxdWEcYySkmVBbUq9OCgpKCJVUNKw4bhZ2jaFAn2HIr77JxEnVzTqF8Bw616Ud4QMWLOcmQvjAH2N2mPhL+PH8FMHufoG73n2rfmYKm674AAAA=[0m[Pipeline] }
+[8mha:////4OulJKYgKeyKpVqVYhLwpS0n47aDEPV/gkzH0DL3QD4ZAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSgISEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDu9p/avgHaAPdtvgAAAA==[0m[Pipeline] // stage
+[8mha:////4P+VNgQoaM4gfO2K9wB2QjbU0hEhnsMTNz21gsqU2zazAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUDAgh1Ik16sIJQhNC0uj/kqSkEyfiatyBQCUmPFi2Jes9X1AFDw15zazC3mDoDBvcqHNiiXx/cZSYpTPrCAM5xVqVWpLqONeWooJZRQkLDkuFnaNgUEdYcSvuonYCdX2KPm8HDqWRN3hAwTM5Ch+/ZfKwvo4yEP44fwEwDRHKzS7bdv95Vm/8EpftwgAAAA==[0m[Pipeline] stage
+[8mha:////4KgRVBaIZ+dRJYF2Od61SAU9cPnQmeHZ98XbKRCJ5VgxAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoiUBSSEOrFGXThBaEJIGv1fkpR04kRcjTsQqMSEB8u2ZL3nC6rgoSGvmVXYGwydYYMbdU4ske8vjhKzdGYdYSCnWKtSS1Id59pSVDCrKGHBYamwcxQM6ggrbsVd1E6grk/R5+3AoTTyBg8oeCZH4eO3TB7W11EGwh/nLwCmIUK53WfbbT7P6g3QSQCqwgAAAA==[0m[Pipeline] { (Functional & authorization tests)
+Stage "Functional & authorization tests" skipped due to earlier failure(s)
+[8mha:////4Bu4Xz/PYoJoIR3tDm1+sbY/+P68o0rCMGSOf2m+YmgdAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICDQ2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBk5Fu7e+AAAA[0m[Pipeline] getContext
+[8mha:////4BeFbPcGHlPFwI52D7mv0PMnsGs5hdMkMs74aI8XWZEvAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCKGgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcr97lPbN/uuxNG+AAAA[0m[Pipeline] }
+[8mha:////4BJI0YGgSQhIEByMPRao+bO2eK4cOXg0FfxqwLWbHJalAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIJAQSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wAOZZpSL4AAAA=[0m[Pipeline] // stage
+[8mha:////4EsWBVh//+4IUWvUJfAZr8lm5Iy2qRbWZCQG44ePZzmLAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUSAgG1Ik16sIJQhNC0uj/kqSkEyfiatyBQCUmPFi2Jes9X1AFDw15zazC3mDoDBvcqHNiiXx/cZSYpTPrCAM5xVqVWpLqONeWooJZRQkLDkuFnaNgUEdYcSvuonYCdX2KPm8HDqWRN3hAwTM5Ch+/ZfKwvo4yEP44fwEwDRHKzT7bbvt5Vm+/G+FgwgAAAA==[0m[Pipeline] stage
+[8mha:////4DyGl2ud2MYd2a/RIc6A7VoARPMKnxdnZVrr9Rom5Pv4AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0ARbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAZRHx0bCAAAA[0m[Pipeline] { (Declarative: Post Actions)
+[8mha:////4Jh8fiGnL6XVXZMIxt7VghmObBjWlpteaTY3dJy1JMLVAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoh0ogtiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsP+urdAcIAAAA=[0m[Pipeline] dir
+[2026-10-22T21:01:09.259Z] Running in /home/onlin/.jenkins/workspace/software_security/code_fixed
+[8mha:////4LDs1CS5fs9D5IgHCUqorBhoUQ+Myr8u5BK9n3VSKP2MAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0KwNiYo2ycILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMUAJwqGOY2dxdha1vvRzIllCt3NU2aOrqwljOQ1EzoLUvq8VkFJw6qihA2HrcbWU7RoEuy4kw9Ze4mmvqQwb0cOpVUDPKHgMznJkL5lCrC/jyoS/jh/ATD1CcqmWeywPKsPXl9jU8IAAAA=[0m[Pipeline] {
+[8mha:////4P8J6H9fz41CfM8QdNluKjAhDQqDC3aCQ3lOyV7i0j7HAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSARKiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyu3uU/vwBonA3qO+AAAA[0m[Pipeline] sh
+[2026-10-22T21:01:09.548Z] + docker compose logs --no-color
+[8mha:////4D0HmFmhbJ5wxpUn2LvBKJIX0RKvKlKsif0vf3i3SUhyAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSgRCiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyu3uU/vwBsjxxbq+AAAA[0m[Pipeline] sh
+[2026-10-22T21:01:09.836Z] + docker compose down -v --remove-orphans
+[8mha:////4FtxVI22vENOoLmj3Nn8iGOaxzXz8jsmSJ2mcj2bwBgQAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCRQpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNn7BGW9z3WoP+eRH6S+AAAA[0m[Pipeline] }
+[8mha:////4GBdQd7hjbWucgH4oqNuH3H8aBBZVOlckjsK/Q2l8reqAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRTSgQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJygP+1x1/QHUckQYvgAAAA==[0m[Pipeline] // dir
+[8mha:////4I38Pwfbd8xcHcxxyQWYKtsZ1amvgQU/Mu0SlY6AnArMAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIQEFSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANEcr9LtdhO3wAHVNsz74AAAA=[0m[Pipeline] junit
+[2026-10-22T21:01:09.910Z] Recording test results
+[2026-10-22T21:01:09.910Z] No test report files were found. Configuration error?
+[2026-10-22T21:01:09.915Z] [Checks API] No suitable checks publisher found.
+[8mha:////4E5DJZbjzS1gKk9I1gBRhr6+WxwGp9IJMTYL2rWCDlehAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIKBAqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKYhQrnf5Tpshw9cYnfWvgAAAA==[0m[Pipeline] archiveArtifacts
+[2026-10-22T21:01:09.944Z] Archiving artifacts
+[2026-10-22T21:01:09.948Z] Recording fingerprints
+[8mha:////4He6np6l5oJZ/V+j42R14im8jd4XpSE0i9ExJ4eEpnHAAAAApR+LCAAAAAAAAP9tjTsOwjAQRDdBFLSUHGLT8ClQKlrLDScwiTFOrN1gOzgVJ+Jq3AGLSFRMMZo3zXu9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKYhQrnf5Tpshw+b9DaZvgAAAA==[0m[Pipeline] sh
+[2026-10-22T21:01:10.300Z] + rm -rf .ci-venv
+[8mha:////4B7lJBVjS+30Vt0dgh/N9/2K6YfyS9/dD/6hlUcA3PjTAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSBQpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNn7BOWhzrWvP3hh3Bq+AAAA[0m[Pipeline] }
+[8mha:////4J3+2x7pljtnkmTLUeMsj4XiDEIIAKvu5quX6LvJYN7yAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMJpUCgQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJygPda56/wFAI0/rvgAAAA==[0m[Pipeline] // stage
+[8mha:////4IpOtMvgH6Wtv6liO2gxOEnd7mdT6iBCu5/+U0R21HUNAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRVQpERWu54QUmOYwT687YDk7Fi/gaf8AiEhVbrHa2mdcb1jHAkYMRA9JoKXZWeDeZskTmMF4dZzHwRXRMkR0KhVlxj6cFFSeEJVUNKwkbpM5xtGQSbOWgH7pxmkxzTqF8Bwm17e/whEoWc9IhfWEOsLtNfWT6ef4KYPY+Qd22pfbtB5g3W/a+AAAA[0m[Pipeline] }
+[8mha:////4EMcW/CdnpNj3w3PKTPZ/C3B2KXsqQ/Xan9LwzaMQ5hXAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiGkBCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDuD7m2uw/btQpwvgAAAA==[0m[Pipeline] // timeout
+[8mha:////4M/HGuKPS9WBn8sOEz497aZrGmZBFWvTY8s2n93gQk0iAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiCoQQSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryf8i13X0AxDdfIr4AAAA=[0m[Pipeline] }
+[8mha:////4In2Xn+i5sbp5qv1rHO6C9DCJEp7XzK+orrN4ay0RiTVAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICEgUSSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4TysM21238AcyYfhL4AAAA=[0m[Pipeline] // timestamps
+[8mha:////4HtYVsLcC0JqEs+0/5GS2FA48QQVBSoKwxOT1cmVHFuFAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiiAYJUaW10vACExvjxLoztkNS8SK+xh+wiETFFqudbeb1hnUMcOJgsNc0WIqdRe9GkxdOHIar4wl7vmDHFNlpbPXUstLNgi0nDUuKElYCNpo6x9GSSbAVvXzIykky1TmF/B0FlFbd4QmFyOYkQ/rCHGB3G1Vk+nn+CmD2PkF5qHPV+w91YCfRvgAAAA==[0m[Pipeline] }
+[8mha:////4EYRWkzF9X4qwys25cCqDM4Mi+Fl9Ov7EX6j7RuPcZDIAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRqZAQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJygPda59/QFNIrQgvgAAAA==[0m[Pipeline] // withEnv
+[8mha:////4M2PVAsJx830iBrhAN3ow/9w9Rg+ynk+N2JCAqH5yNjVAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiiAYJUaW10vACExvjxLoztkNS8SK+xh+wiETFFqudbeb1hnUMcOJgsNc0WIqdRe9GkxdOHIar4wl7vmDHFNlpbPXUstLNgi0nDUuKElYCNpo6x9GSSbAVvXzIykky1TmF/B0FlFbd4QmFyOYkQ/rCHGB3G1Vk+nn+CmD2PkF52Oeq6w9SoOFyvgAAAA==[0m[Pipeline] }
+[8mha:////4D97FfHzqLOzu675zTghYSOhjYikVULRS3thqGWgi8MxAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICEgUSSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4TysM+1234AfKDjGL4AAAA=[0m[Pipeline] // withEnv
+[8mha:////4Aj+qCTfgTksnYI+CuXZN132mSIJs3LT2yi7WoJoSsESAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJpQEJCVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5PudINt+AD31qj29AAAA[0m[Pipeline] }
+[8mha:////4GAYoixvPhELMMOx/V8JMqCfTmQ9MYr+CR990bbH+Y6qAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIpkBASoqK10vACkxjjxLoL9oWk4kV8jT8QEYmKrXammdcbyxRx5OhUY6n1lCqvutC76amBY3sNPKiGL6piShysKu1Qcm1PM5YsFvOyHAuNlaUqcPLkBGvdmIcpgiFXnCVO7qCR+/qOJzI9lcVE+cIYsbn1dWL6df4GMHadIN/vBNn2A04abuS9AAAA[0m[Pipeline] // node
+[8mha:////4DfD/ye7Ux9evc9bdUyJCIXzYMJO5wCPU80J92tfnfSFAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKRaEBCVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5PudINt+AGgDCa69AAAA[0m[Pipeline] End of Pipeline
+ERROR: Dependency analysis found vulnerable packages (see pip-audit reports). Blocking release.
+Finished: FAILURE
