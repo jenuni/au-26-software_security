@@ -1,45 +1,70 @@
+# message vault running on http://localhost:8001
+
+import sqlite3
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
-app = FastAPI(title="ADFMS Message Vault", version="1.0.0")
+app = FastAPI(title="Message Vault")
 
-# In-memory storage for private messages 
-MESSAGE_DATABASE = []
+DB_FILE = "vault.db"
 
-class StoreMessageModel(BaseModel):
+def init_db():
+    conn = sqlite3.connect(DB_FILE)
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            sender TEXT,
+            recipient TEXT,
+            content TEXT
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+init_db()
+
+class Message(BaseModel):
     sender: str
     recipient: str
-    text: str
+    content: str
 
-@app.post("/store")
-def store_message(msg: StoreMessageModel):
-    """Stores a new private message in the vault."""
-    message_entry = {
-        "id": len(MESSAGE_DATABASE) + 1,
-        "sender": msg.sender,
-        "recipient": msg.recipient,
-        "text": msg.text
-    }
-    MESSAGE_DATABASE.append(message_entry)
-    return {"status": "success", "message_id": message_entry["id"]}
+@app.post("/messages")
+def store_message(msg: Message):
+    conn = sqlite3.connect(DB_FILE)
+    cursor = conn.cursor()
 
-@app.get("/messages/{username}")
-def get_user_messages(username: str):
-    """Retrieves messages for a specific user."""
-    user_messages = [
-        m for m in MESSAGE_DATABASE 
-        if m["sender"] == username or m["recipient"] == username
-    ]
-    return {"messages": user_messages}
+    cursor.execute(
+        "INSERT INTO messages (sender, recipient, content) VALUES (?, ?, ?)",
+        (msg.sender, msg.recipient, msg.content)
+    )
+    conn.commit()
+    conn.close()
+    return {"status": "stored", "recipient": msg.recipient}
 
-@app.delete("/messages/{message_id}")
-def delete_message(message_id: int):
-    """Deletes a specific message by ID."""
-    global MESSAGE_DATABASE
-    initial_len = len(MESSAGE_DATABASE)
-    MESSAGE_DATABASE = [m for m in MESSAGE_DATABASE if m["id"] != message_id]
+@app.get("/messages/{recipient}")
+def get_messages(recipient: str):
+    # --- VULNERABILITY: CWE-862 (Composition Vulnerability and Missing Authorization) ---
+    # No authentication or authorization checks are performed here, allowing any user to retrieve messages for any recipient.
+
+    conn = sqlite3.connect(DB_FILE)
+    cursor = conn.cursor()
+
+    # --- VULNERABILITY: CWE-89 (SQL Injection) ---
+    # Using direct string formatting instead of parameterized queries 
+    query = f"SELECT id, sender, recipient, content FROM messages WHERE recipient = '{recipient}'"
     
-    if len(MESSAGE_DATABASE) == initial_len:
-        raise HTTPException(status_code=404, detail="Message not found")
+    try:
+        cursor.execute(query)
+        rows = cursor.fetchall()
+    except sqlite3.Error as e:
+        conn.close()
+        raise HTTPException(status_code=400, database_error=str(e))
         
-    return {"status": "success", "deleted_id": message_id}
+    conn.close()
+    
+    messages = [
+        {"id": row[0], "sender": row[1], "recipient": row[2], "content": row[3]}
+        for row in rows
+    ]
+    return {"recipient": recipient, "messages": messages}

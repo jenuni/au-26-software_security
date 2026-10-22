@@ -1,4 +1,7 @@
+# app api running on http://localhost:8000
+
 from fastapi import FastAPI, HTTPException, Header, Depends
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import requests
 import os
@@ -63,3 +66,21 @@ def request_export(authorization: str = Header(None)):
     # Trigger the processing worker service
     response = requests.post(f"{PROCESSING_WORKER_URL}/run-export", json={"username": user_info["username"]})
     return response.json()
+
+# --- VULNERABILITY: CWE-22 (Path Traversal) ---
+@app.get("/download")
+def download_file(filename: str):
+    """
+    Vulnerable file download endpoint for documents like Terms of Service (tos.txt) or Privacy Policy (privacy.txt).
+    Allows an attacker to use '../../' to read arbitrary files from the container.
+    """
+    # Directory where safe documents are supposed to be stored
+    target_dir = "./documents"
+    
+    # Unsafe path concatenation without proper sanitization or normalization checks
+    file_path = os.path.join(target_dir, filename)
+    
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="File not found")
+        
+    return FileResponse(file_path)
