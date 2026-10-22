@@ -1,7 +1,7 @@
 # Phase 1: Requirements
 
 ## Scope and Operation List
-**Domain:** Secure Messaging App (Python)
+**Domain:** Messaging Application (Python)
 **Protected Resource:** Private Messages
 **Operations (Functionalities):**
 1. **Send Message:** Any authenticated user sends a message to a recipient (Application API -> Message Vault).
@@ -50,3 +50,23 @@ The application runs as three independent processes (separate Docker containers)
 **Decision: PASS**
 
 # Phase 2: Implementation and Build
+
+## Deliverables
+* **Three working components**, each running as a separate Docker container and communicating only over HTTP: Application API (`src/app_api`, port 8000), Processing Worker (`src/processing_worker`, port 8002), and Message Vault (`src/message_vault`, port 8001). Orchestrated by `docker-compose.yml`.
+* **External dependency**: the `chat_formatter` helper package (`external_packages/chat_formatter`) is built and installed as a real package in the Worker's Dockerfile (`pip install external_packages/chat_formatter`), not copied into component source. This is the "external" dependency used by the export functionality.
+* **Reproducible builds**: pinned dependencies in each component's `requirements.txt`.
+
+## Dependency Trust and Supply Chain
+| Concern | Control | Lifecycle activity |
+| :--- | :--- | :--- |
+| Known-vulnerable third-party packages | `pip-audit` on every component's declared dependencies | CI "Dependency analysis" stage |
+| Unapproved / unlisted artifacts | Only pinned, declared packages are installed; `chat_formatter` comes from a controlled local source, never PyPI | Docker build + dependency audit |
+| Insecure code patterns | `bandit` static analysis over `src/` and `external_packages/` | CI "Static analysis" stage |
+
+## Lifecycle Activity (CI)
+The `Jenkinsfile` runs on every push and pull request and performs: validate/build the components (installing each component's pinned `requirements.txt`, so an unresolved or unlisted dependency fails the build), **static analysis** (Bandit), and **dependency analysis** (pip-audit) (for Phase 2). CI runs the services as plain Python processes rather than containers; the Docker/compose setup is the deployment path. All reports are archived as build artifacts. (The functional/authorization test stage belongs to Phase 3.)
+
+## Gate Decision
+**Blocking criteria:** the build is rejected if Bandit reports findings at or above the configured severity/confidence threshold, or if pip-audit reports vulnerable dependencies.
+**Expected result on the vulnerable build: FAIL**. Bandit flags the planted CWE-89 (string-formatted SQL) and CWE-502 (`pickle.loads`), and pip-audit flags the outdated `requests==2.31.0`. This failing run is retained as evidence that the gate works.
+**Expected result on the fixed build (`code_fixed/`): PASS**. The corrected code uses parameterized queries and safe deserialization (removing the Bandit findings) and updates the flagged dependencies, so no blocking finding remains and the build is cleared for release.
