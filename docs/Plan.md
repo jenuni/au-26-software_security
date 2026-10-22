@@ -70,3 +70,20 @@ The `Jenkinsfile` runs on every push and pull request and performs: validate/bui
 **Blocking criteria:** the build is rejected if Bandit reports findings at or above the configured severity/confidence threshold, or if pip-audit reports vulnerable dependencies.
 **Expected result on the vulnerable build: FAIL**. Bandit flags the planted CWE-89 (string-formatted SQL) and CWE-502 (`pickle.loads`), and pip-audit flags the outdated `requests==2.31.0`. This failing run is retained as evidence that the gate works.
 **Expected result on the fixed build (`code_fixed/`): PASS**. The corrected code uses parameterized queries and safe deserialization (removing the Bandit findings) and updates the flagged dependencies, so no blocking finding remains and the build is cleared for release.
+
+# Phase 3: Testing
+
+## Deliverables
+* An automated test suite (`tests/`) that runs against the live, running stack over HTTP and is organised into three marked categories: `functional`, `authorization`, and `security`.
+
+## Test Coverage
+| Category | What it checks |
+| :--- | :--- |
+| **Functional** | All seeded users log in (bad password rejected); send a message; export spanning all three components; Admin import restored and visible via export. |
+| **Authorization** | Missing/invalid token -> 403 (fail-safe defaults); ordinary user denied the Admin-only import -> 403 (least privilege); export scoped to the caller's own inbox; session token rejected after its TTL -> 401 (validity period). |
+| **Security** | CWE-22: path traversal on `/download` is blocked. CWE-89: an injected recipient does not return other users' rows. Composition/CWE-862: direct, unauthenticated calls to the Worker and Vault are rejected. CWE-502: a malicious serialized backup does not execute code during import. |
+
+## Gate Decision
+**Blocking criteria:** any failing functional or authorization test blocks the release, and the security tests must pass on the build being released.
+**Expected result on the vulnerable build: FAIL**. The security tests fail because the planted vulnerabilities are exploitable.
+**Expected result on the fixed build: PASS**. Functional, authorization, and security tests all pass, clearing the release.
