@@ -48,7 +48,7 @@ pipeline {
                 // Installing each component's pinned requirements is the build-
                 // validation: an unresolved or unlisted dependency fails here.
                 sh '''
-                    # Pick a Python that matches the app's target (3.10-3.12). The host's
+                    # Pick a Python that matches the app's target (3.10-3.12).
                     PYBIN=""
                     for c in python3.12 python3.11 python3.10 python3; do
                         if command -v "$c" >/dev/null 2>&1; then PYBIN="$c"; break; fi
