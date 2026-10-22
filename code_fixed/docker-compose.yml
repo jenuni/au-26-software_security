@@ -1,0 +1,47 @@
+services:
+  message_vault:
+    build:
+      context: ./src/message_vault
+      dockerfile: Dockerfile
+    # Bound to localhost only (isolation). Production would not publish this
+    # port at all and rely solely on the internal network + the service token.
+    ports:
+      - "127.0.0.1:8001:8001"
+    environment:
+      - INTERNAL_SERVICE_TOKEN=${INTERNAL_SERVICE_TOKEN:-adfms-internal-service-secret}
+    networks:
+      - app-net
+
+  processing_worker:
+    build:
+      context: .
+      dockerfile: src/processing_worker/Dockerfile
+    ports:
+      - "127.0.0.1:8002:8002"
+    environment:
+      - MESSAGE_VAULT_URL=http://message_vault:8001
+      - INTERNAL_SERVICE_TOKEN=${INTERNAL_SERVICE_TOKEN:-adfms-internal-service-secret}
+    networks:
+      - app-net
+    depends_on:
+      - message_vault
+
+  app_api:
+    build:
+      context: ./src/app_api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - MESSAGE_VAULT_URL=http://message_vault:8001
+      - PROCESSING_WORKER_URL=http://processing_worker:8002
+      - INTERNAL_SERVICE_TOKEN=${INTERNAL_SERVICE_TOKEN:-adfms-internal-service-secret}
+    networks:
+      - app-net
+    depends_on:
+      - message_vault
+      - processing_worker
+
+networks:
+  app-net:
+    driver: bridge
