@@ -3,7 +3,7 @@ def format_chat_to_markdown(messages: list) -> str:
     output = "# Secure Chat Export\n\n"
     for msg in messages:
         sender = msg.get("sender", "Unknown")
-        text = msg.get("text", "")
-        timestamp = msg.get("timestamp", "N/A")
-        output += f"- **[{timestamp}] {sender}**: {text}\n"
+        recipient = msg.get("recipient", "Unknown")
+        content = msg.get("content", "")
+        output += f"- **{sender} -> {recipient}**: {content}\n"
     return output

@@ -1,15 +1,16 @@
 # message vault running on http://localhost:8001
 
+import os
 import sqlite3
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 app = FastAPI(title="Message Vault")
 
-DB_FILE = "vault.db"
+VAULT_DB_FILE = os.getenv("VAULT_DB_FILE", "vault.db")
 
 def init_db():
-    conn = sqlite3.connect(DB_FILE)
+    conn = sqlite3.connect(VAULT_DB_FILE)
     cursor = conn.cursor()
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS messages (
@@ -31,7 +32,10 @@ class Message(BaseModel):
 
 @app.post("/messages")
 def store_message(msg: Message):
-    conn = sqlite3.connect(DB_FILE)
+    """
+    Resource service: persists a single message record into the vault.
+    """
+    conn = sqlite3.connect(VAULT_DB_FILE)
     cursor = conn.cursor()
 
     cursor.execute(
@@ -44,10 +48,14 @@ def store_message(msg: Message):
 
 @app.get("/messages/{recipient}")
 def get_messages(recipient: str):
-    # --- VULNERABILITY: CWE-862 (Composition Vulnerability and Missing Authorization) ---
-    # No authentication or authorization checks are performed here, allowing any user to retrieve messages for any recipient.
+    """
+    Resource service: returns all messages for a given recipient.
+    """
+    # --- VULNERABILITY: CWE-862 (Missing Authorization) + COMPOSITION FLAW ---
+    # No auth check: the vault trusts any caller, so port 8001 reachable directly
+    # lets anyone read any recipient's inbox, bypassing the API entirely.
 
-    conn = sqlite3.connect(DB_FILE)
+    conn = sqlite3.connect(VAULT_DB_FILE)
     cursor = conn.cursor()
 
     # --- VULNERABILITY: CWE-89 (SQL Injection) ---
@@ -59,7 +67,7 @@ def get_messages(recipient: str):
         rows = cursor.fetchall()
     except sqlite3.Error as e:
         conn.close()
-        raise HTTPException(status_code=400, database_error=str(e))
+        raise HTTPException(status_code=400, detail=str(e))
         
     conn.close()
     
