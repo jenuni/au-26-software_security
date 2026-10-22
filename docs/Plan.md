@@ -45,4 +45,8 @@ The application runs as three independent processes (separate Docker containers)
 | **Denial of Service** | Application API | An attacker spams export/import jobs to exhaust resources. | Availability | *Production requirement:* rate limiting and request quotas at the API. Not implemented in this prototype. |
 | **Elevation of Privilege** | Session Tokens | An ordinary user invokes the Admin-only import action. | Authorization, Integrity | **Least privilege:** the API enforces an Admin role check on `/import`. **Defense in depth** (target state) adds the same check at the Worker/Vault; the missing cross-tier check is the planted composition flaw. |
 
+## Gate Decision
+**Reviewed:** the three-component architecture meets the scope, the assets and their owners are identified, two roles with a privileged restricted action (Admin-only import) are defined, and every STRIDE threat maps to a control or a documented gap.
+**Decision: PASS**
+
 # Phase 2: Implementation and Build
