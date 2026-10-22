@@ -49,8 +49,6 @@ pipeline {
                 // validation: an unresolved or unlisted dependency fails here.
                 sh '''
                     # Pick a Python that matches the app's target (3.10-3.12). The host's
-                    # default python3 may be too new for the pinned deps (no prebuilt
-                    # wheels), so prefer a known-good minor version when available.
                     PYBIN=""
                     for c in python3.12 python3.11 python3.10 python3; do
                         if command -v "$c" >/dev/null 2>&1; then PYBIN="$c"; break; fi
