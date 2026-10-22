@@ -157,6 +157,14 @@ pipeline {
                     done
                     if [ "$up" != "1" ]; then echo "API did not come up"; exit 1; fi
 
+                    # Backup wire format the Import feature expects differs by build:
+                    # pickle for the vulnerable build, json for the fixed one.
+                    case "${TARGET}" in
+                        *fixed*) export BACKUP_FORMAT=json ;;
+                        *)       export BACKUP_FORMAT=pickle ;;
+                    esac
+                    echo "Using BACKUP_FORMAT=${BACKUP_FORMAT}"
+
                     set +e
                     pytest tests/ -v --junitxml=${REPORTS}/pytest-junit.xml
                     rc=$?
