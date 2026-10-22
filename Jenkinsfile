@@ -48,7 +48,16 @@ pipeline {
                 // Installing each component's pinned requirements is the build-
                 // validation: an unresolved or unlisted dependency fails here.
                 sh '''
-                    python3 -m venv ${VENV}
+                    # Pick a Python that matches the app's target (3.10-3.12). The host's
+                    # default python3 may be too new for the pinned deps (no prebuilt
+                    # wheels), so prefer a known-good minor version when available.
+                    PYBIN=""
+                    for c in python3.12 python3.11 python3.10 python3; do
+                        if command -v "$c" >/dev/null 2>&1; then PYBIN="$c"; break; fi
+                    done
+                    echo "Using interpreter: $PYBIN ($($PYBIN --version 2>&1))"
+
+                    "$PYBIN" -m venv ${VENV}
                     . ${VENV}/bin/activate
                     python -m pip install --upgrade pip
                     pip install bandit pip-audit pytest requests
