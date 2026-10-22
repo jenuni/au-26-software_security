@@ -38,7 +38,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
-                sh 'mkdir -p ${REPORTS}'
+                  sh 'rm -rf ${REPORTS} && mkdir -p ${REPORTS}'
             }
         }
 
