@@ -64,7 +64,7 @@ The application runs as three independent processes (separate Docker containers)
 | Insecure code patterns | `bandit` static analysis over `src/` and `external_packages/` | CI "Static analysis" stage |
 
 ## Lifecycle Activity (CI)
-The `Jenkinsfile` runs on every push and pull request and performs: validate/build the components (installing each component's pinned `requirements.txt`, so an unresolved or unlisted dependency fails the build), **static analysis** (Bandit), and **dependency analysis** (pip-audit) (for Phase 2). CI runs the services as plain Python processes rather than containers; the Docker/compose setup is the deployment path. All reports are archived as build artifacts. (The functional/authorization test stage belongs to Phase 3.)
+The `Jenkinsfile` runs on every push and pull request and performs (for Phase 2): **static analysis** (Bandit), **dependency analysis** (pip-audit on each component's pinned `requirements.txt`), and **build** of the three components as Docker images via `docker compose build` (a broken Dockerfile or unresolved dependency fails the build). The CI builds and runs the same container images that are deployed; the analysis tools run in a small virtualenv on the agent. All reports are archived as build artifacts. (The functional/authorization test stage belongs to Phase 3.)
 
 ## Gate Decision
 **Blocking criteria:** the build is rejected if Bandit reports findings at or above the configured severity/confidence threshold, or if pip-audit reports vulnerable dependencies.
@@ -87,3 +87,7 @@ The `Jenkinsfile` runs on every push and pull request and performs: validate/bui
 **Blocking criteria:** any failing functional or authorization test blocks the release, and the security tests must pass on the build being released.
 **Expected result on the vulnerable build: FAIL**. The security tests fail because the planted vulnerabilities are exploitable.
 **Expected result on the fixed build: PASS**. Functional, authorization, and security tests all pass, clearing the release.
+
+# Phase 4: Release, Deploy and Operation
+
+What a production release would require is discussed in the report.
