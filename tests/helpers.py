@@ -16,6 +16,8 @@ API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
 VAULT_URL = os.getenv("VAULT_URL", "http://127.0.0.1:8001")
 WORKER_URL = os.getenv("WORKER_URL", "http://127.0.0.1:8002")
 
+INTERNAL_TOKEN = os.getenv("INTERNAL_SERVICE_TOKEN", "adfms-internal-service-secret")
+
 # Seeded synthetic accounts.
 USERS = {
     "pilot1": os.getenv("PILOT1_PASSWORD", "Drone@123"),

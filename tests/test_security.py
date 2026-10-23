@@ -18,7 +18,7 @@ import urllib.parse
 import pytest
 import requests
 
-from helpers import API_URL, VAULT_URL, WORKER_URL, auth, send_message
+from helpers import API_URL, VAULT_URL, WORKER_URL, INTERNAL_TOKEN, auth, send_message
 
 pytestmark = pytest.mark.security
 
@@ -40,13 +40,18 @@ def test_download_path_traversal_blocked():
 # --- CWE-89: SQL Injection (Message Vault) ---
 
 def test_sql_injection_does_not_dump_all(pilot1_token):
-    """An injection in the recipient must not return rows for other recipients."""
+    """An injection in the recipient must not return rows for other recipients.
+
+    The call carries the internal token so it is authorized on the fixed build
+    and actually reaches the query, proving the injection is neutralised at the
+    SQL level.
+    """
     marker = f"sqlimark-{uuid.uuid4().hex}"
     assert send_message(pilot1_token, "pilot2", marker).status_code == 200
 
     injection = "no_such_recipient' OR '1'='1"
     url = f"{VAULT_URL}/messages/{urllib.parse.quote(injection, safe='')}"
-    r = requests.get(url)
+    r = requests.get(url, headers={"X-Internal-Token": INTERNAL_TOKEN})
 
     body = r.json() if r.status_code == 200 else {}
     contents = [m.get("content", "") for m in body.get("messages", [])]

