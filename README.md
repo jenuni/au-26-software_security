@@ -72,11 +72,10 @@ in the [report](docs/report.pdf).
 
 ## 6. Prerequisites
 
-- **Docker** and the **`docker compose` v2** plugin — to build and run the stack.
-- **Python 3.x** with `pytest` and `requests` — only to run the test client,
-  which talks to the running stack over HTTP (the app itself runs on Python 3.10
-  inside the containers, so the host's Python version does not matter here).
-
+- **Docker** and the **`docker compose` v2** plugin: to build and run the stack.
+- **Python 3.x** with `pytest` and `requests`: only to run the test client,
+  which talks to the running stack over HTTP 
+  
 Install on Debian/Ubuntu:
 
 ```bash

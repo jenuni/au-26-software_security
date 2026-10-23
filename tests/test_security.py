@@ -69,17 +69,40 @@ def test_vault_direct_read_blocked():
 
 # --- CWE-502: Deserialization of Untrusted Data (Processing Worker import) ---
 
-@pytest.mark.skipif(os.name != "posix", reason="RCE marker check uses a POSIX shell command")
 def test_import_pickle_rce_blocked(admin_token):
-    """A malicious pickle backup must not execute code during import."""
-    marker = f"/tmp/pwned-{uuid.uuid4().hex}"
+    """A malicious pickle backup must not execute code during import.
+
+    If the backup is deserialized with pickle, the payload runs a shell command
+    inside the Worker that posts a sentinel message to the Vault (which the
+    Worker can reach). We then check the Vault for that message over HTTP:
+    present => code executed (vulnerability). 
+    """
+    rid = f"pwned-{uuid.uuid4().hex}"
+    # Runs in the Worker: post {content: "RCE"} to whatever vault URL the Worker uses.
+    code = (
+        "import os,urllib.request,json;"
+        "u=os.environ.get('MESSAGE_VAULT_URL','http://localhost:8001');"
+        "d=json.dumps({'sender':'pwned','recipient':'%s','content':'RCE'}).encode();"
+        "urllib.request.urlopen(urllib.request.Request("
+        "u+'/messages',data=d,headers={'Content-Type':'application/json'}),timeout=5)"
+    ) % rid
+    cmd = 'python3 -c "%s"' % code
 
     class Exploit:
         def __reduce__(self):
-            return (os.system, (f"touch {marker}",))
+            return (os.system, (cmd,))
 
     payload = base64.b64encode(pickle.dumps(Exploit())).decode()
     requests.post(f"{API_URL}/import", headers=auth(admin_token), json={"backup": payload})
-    time.sleep(1)
 
-    assert not os.path.exists(marker), "Malicious pickle executed code in the Worker (CWE-502)"
+    planted = False
+    for _ in range(5):
+        time.sleep(1)
+        r = requests.get(f"{VAULT_URL}/messages/{rid}")
+        if r.status_code == 200 and any(
+            m.get("content") == "RCE" for m in r.json().get("messages", [])
+        ):
+            planted = True
+            break
+
+    assert not planted, "Malicious pickle executed code in the Worker (CWE-502)"
