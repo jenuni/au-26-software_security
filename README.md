@@ -72,6 +72,7 @@ in the [report](docs/report.pdf).
 
 ## 6. Prerequisites
 
+- **git**: to clone the repository.
 - **Docker** and the **`docker compose` v2** plugin: to build and run the stack.
 - **Python 3.x** with `pytest` and `requests`: only to run the test client,
   which talks to the running stack over HTTP 
@@ -79,10 +80,11 @@ in the [report](docs/report.pdf).
 Install on Debian/Ubuntu:
 
 ```bash
-# Docker + Compose v2
 sudo apt update
-sudo apt install -y docker.io docker-compose-v2
-sudo usermod -aG docker "$USER"   
+
+# git + Docker + Compose v2
+sudo apt install -y git docker.io docker-compose-v2
+sudo usermod -aG docker "$USER"
 newgrp docker
 
 # Python + venv for the test client
