@@ -68,8 +68,8 @@ The `Jenkinsfile` runs on every push and pull request and performs (for Phase 2)
 
 ## Gate Decision
 **Blocking criteria:** the build is rejected if Bandit reports findings at or above the configured severity/confidence threshold, or if pip-audit reports vulnerable dependencies.
-**Expected result on the vulnerable build: FAIL**. Bandit flags the planted CWE-89 (string-formatted SQL) and CWE-502 (`pickle.loads`), and pip-audit flags the outdated `requests==2.31.0`. This failing run is retained as evidence that the gate works.
-**Expected result on the fixed build (`code_fixed/`): PASS**. The corrected code uses parameterized queries and safe deserialization (removing the Bandit findings) and updates the flagged dependencies, so no blocking finding remains and the build is cleared for release.
+**Expected result on the vulnerable build: FAIL**. Bandit flags the planted CWE-89 (string-formatted SQL) and CWE-502 (`pickle.loads`). This failing run is retained as evidence that the gate works.
+**Expected result on the fixed build (`code_fixed/`): PASS**. The corrected code uses parameterized queries and safe deserialization (removing the Bandit findings), so no blocking finding remains and the build is cleared for release.
 
 # Phase 3: Testing
 
